@@ -11,7 +11,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-neutral-900 hover:text-neutral-700 transition-colors">
-            HotelFurniture
+            HotelFurnituresss
           </Link>
 
           {/* Navigation Links */}
