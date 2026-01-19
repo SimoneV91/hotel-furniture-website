@@ -17,18 +17,12 @@ export const metadata: Metadata = {
   description: "Soluzioni di arredamento contract per hotel, alberghi e strutture ricettive. Design, qualità e funzionalità per ambienti di accoglienza.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
+
