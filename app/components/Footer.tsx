@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-white text-xl font-bold mb-4">HotelFurniture</h3>
             <p className="text-neutral-400 mb-4 max-w-md">
-              Soluzioni di arredamento contract per hotel, alberghi e strutture ricettive. 
+              Soluzioni di arredamento contract per hotel, alberghi e strutture ricettive. ddddd
               Qualità, design e funzionalità per ambienti di accoglienza.
             </p>
           </div>
