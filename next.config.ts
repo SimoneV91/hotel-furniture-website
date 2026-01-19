@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export', // <- abilita l’export statico
+  output: 'export',
+  basePath: '/hotel-furniture-website', // <- aggiungi questo
   images: {
     remotePatterns: [
       {
