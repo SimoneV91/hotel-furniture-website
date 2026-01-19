@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[3127,["/hotel-furniture-website/_next/static/chunks/8f53368319a15be7.js","/hotel-furniture-website/_next/static/chunks/14d14c01227b1543.js"],"default"]
 3:I[56670,["/hotel-furniture-website/_next/static/chunks/8f53368319a15be7.js","/hotel-furniture-website/_next/static/chunks/14d14c01227b1543.js"],"default"]
-0:{"buildId":"A0D5ZYmL8-t6bpo0cr8q9","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"MCbgRRU3oIPiTAlzQyjNE","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
