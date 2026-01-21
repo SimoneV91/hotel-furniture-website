@@ -19,7 +19,7 @@ export default function CategoryPreview({
 }: CategoryPreviewProps) {
   return (
     <Link 
-      href="/products" 
+      href="/catalogo" 
       className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
     >
       <div className="relative h-64 overflow-hidden">
@@ -32,10 +32,10 @@ export default function CategoryPreview({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-neutral-700 transition-colors">
+        <h3 className="text-xl font-semibold text-sage-900 mb-2 group-hover:text-sage-700 transition-colors">
           {title}
         </h3>
-        <p className="text-neutral-600 text-sm">
+        <p className="text-sage-600 text-sm">
           {description}
         </p>
       </div>

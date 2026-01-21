@@ -89,10 +89,10 @@ export default function Homepage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-6">
               Soluzioni Contract per l'Hospitality
             </h2>
-            <p className="text-lg text-neutral-700 mb-8 leading-relaxed">
+            <p className="text-lg text-sage-700 mb-8 leading-relaxed">
               Siamo specializzati nella progettazione e realizzazione di arredi contract 
               per hotel, alberghi e strutture ricettive. Con oltre 20 anni di esperienza 
               nel settore, offriamo soluzioni su misura che combinano design contemporaneo, 
@@ -100,7 +100,7 @@ export default function Homepage() {
             </p>
             <Link
               href="/about"
-              className="text-neutral-900 font-semibold hover:text-neutral-700 transition-colors inline-flex items-center gap-2"
+              className="text-sage-900 font-semibold hover:text-sage-700 transition-colors inline-flex items-center gap-2"
             >
               Scopri di più su di noi
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,13 +112,13 @@ export default function Homepage() {
       </section>
 
       {/* Categories Preview Section */}
-      <section className="py-20 bg-neutral-50">
+      <section className="py-20 bg-sage-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
               Le Nostre Categorie
             </h2>
-            <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
+            <p className="text-lg text-sage-700 max-w-2xl mx-auto">
               Soluzioni complete per ogni ambiente della tua struttura ricettiva
             </p>
           </div>
@@ -137,8 +137,8 @@ export default function Homepage() {
 
           <div className="text-center mt-12">
             <Link
-              href="/products"
-              className="bg-neutral-900 text-white px-8 py-4 rounded-md hover:bg-neutral-800 transition-colors font-medium inline-block"
+              href="/catalogo"
+              className="bg-sage-900 text-white px-8 py-4 rounded-md hover:bg-sage-800 transition-colors font-medium inline-block"
             >
               Esplora tutti i prodotti
             </Link>
@@ -150,10 +150,10 @@ export default function Homepage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
               I Nostri Progetti
             </h2>
-            <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
+            <p className="text-lg text-sage-700 max-w-2xl mx-auto">
               Alcuni dei progetti che abbiamo realizzato per strutture ricettive in tutta Italia
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function Homepage() {
           <div className="text-center mt-12">
             <Link
               href="/projects"
-              className="bg-neutral-900 text-white px-8 py-4 rounded-md hover:bg-neutral-800 transition-colors font-medium inline-block"
+              className="bg-sage-900 text-white px-8 py-4 rounded-md hover:bg-sage-800 transition-colors font-medium inline-block"
             >
               Vedi tutti i progetti
             </Link>
@@ -183,19 +183,19 @@ export default function Homepage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-neutral-900 text-white">
+      <section className="py-20 bg-sage-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               Pronto a trasformare la tua struttura?
             </h2>
-            <p className="text-lg text-neutral-300 mb-10 leading-relaxed">
+            <p className="text-lg text-sage-300 mb-10 leading-relaxed">
               Contattaci per una consulenza gratuita e scopri come possiamo aiutarti 
               a creare ambienti di accoglienza unici e memorabili per i tuoi ospiti.
             </p>
             <Link
               href="/contact"
-              className="bg-white text-neutral-900 px-8 py-4 rounded-md hover:bg-neutral-100 transition-colors font-medium inline-block"
+              className="bg-white text-sage-900 px-8 py-4 rounded-md hover:bg-sage-100 transition-colors font-medium inline-block"
             >
               Richiedi un preventivo
             </Link>

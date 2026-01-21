@@ -34,11 +34,11 @@ export default function ProjectPreview({
         />
       </div>
       <div className="p-6">
-        <span className="text-sm text-neutral-500 uppercase tracking-wide">{category}</span>
-        <h3 className="text-xl font-semibold text-neutral-900 mt-2 mb-1 group-hover:text-neutral-700 transition-colors">
+        <span className="text-sm text-sage-500 uppercase tracking-wide">{category}</span>
+        <h3 className="text-xl font-semibold text-sage-900 mt-2 mb-1 group-hover:text-sage-700 transition-colors">
           {title}
         </h3>
-        <p className="text-neutral-600 text-sm">
+        <p className="text-sage-600 text-sm">
           {location}
         </p>
       </div>

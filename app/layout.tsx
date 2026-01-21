@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HotelFurniture - Arredamento Contract per Hotel e Strutture Ricettive",
+  title: "Mobili per Albergo - Arredamento Contract per Hotel e Strutture Ricettive",
   description: "Soluzioni di arredamento contract per hotel, alberghi e strutture ricettive. Design, qualità e funzionalità per ambienti di accoglienza.",
 };
 

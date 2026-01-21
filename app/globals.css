@@ -10,6 +10,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Sage color palette */
+  --color-sage-50: #F4F7F2;
+  --color-sage-100: #E8EDE3;
+  --color-sage-200: #D4DDCC;
+  --color-sage-300: #B8C5A8;
+  --color-sage-400: #9CAF88;
+  --color-sage-500: #7A8F6A;
+  --color-sage-600: #6B7F5A;
+  --color-sage-700: #5A6B4F;
+  --color-sage-800: #4A5A3F;
+  --color-sage-900: #3A4A2F;
 }
 
 body {
@@ -25,6 +37,6 @@ html {
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid #171717;
+  outline: 2px solid #5A6B4F;
   outline-offset: 2px;
 }

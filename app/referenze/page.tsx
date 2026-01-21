@@ -3,9 +3,9 @@ import Footer from '../components/Footer';
 import Link from 'next/link';
 
 /**
- * Projects page - Placeholder page for projects listing
+ * Referenze page - References page
  */
-export default function ProjectsPage() {
+export default function ReferenzePage() {
   return (
     <>
       <Header />
@@ -13,10 +13,10 @@ export default function ProjectsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-sage-900 mb-6">
-              I Nostri Progetti
+              Referenze
             </h1>
             <p className="text-lg text-sage-700 mb-8">
-              Pagina dedicata ai progetti in fase di sviluppo.
+              Pagina dedicata alle referenze in fase di sviluppo.
             </p>
             <Link
               href="/"

@@ -9,18 +9,18 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-neutral-50">
+      <main className="min-h-screen bg-sage-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-sage-900 mb-6">
               I Nostri Prodotti
             </h1>
-            <p className="text-lg text-neutral-700 mb-8">
+            <p className="text-lg text-sage-700 mb-8">
               Pagina dedicata ai prodotti in fase di sviluppo.
             </p>
             <Link
               href="/"
-              className="bg-neutral-900 text-white px-8 py-4 rounded-md hover:bg-neutral-800 transition-colors font-medium inline-block"
+              className="bg-sage-900 text-white px-8 py-4 rounded-md hover:bg-sage-800 transition-colors font-medium inline-block"
             >
               Torna alla Home
             </Link>
