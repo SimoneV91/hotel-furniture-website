@@ -60,9 +60,9 @@ export default function Homepage() {
       imageAlt: 'Boutique Hotel Roma'
     },
     {
-      title: 'Spa Resort Dolomiti',
+      title: 'B&B Napoleone',
       location: 'Trentino, Italia',
-      category: 'Spa Resort',
+      category: 'B&B',
       imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
       imageAlt: 'Spa Resort Dolomiti'
     }
