@@ -17,13 +17,13 @@ export default function Homepage() {
       imageAlt: 'Camera d\'hotel moderna'
     },
     {
-      title: 'Camere 5 Stelle',
+      title: 'Camere 4 Stelle',
       description: 'Reception, lounge e spazi comuni con design contemporaneo',
       imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
       imageAlt: 'Reception hotel elegante'
     },
     {
-      title: 'Camere 5 Stelle',
+      title: 'Camere 3 Stelle',
       description: 'Tavoli, sedute e arredi per ristoranti e bar di hotel',
       imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
       imageAlt: 'Ristorante hotel'
@@ -111,7 +111,7 @@ export default function Homepage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-6">
             {categories.map((category, index) => (
               <CategoryPreview
                 key={index}
