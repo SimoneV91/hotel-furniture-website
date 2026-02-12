@@ -11,41 +11,29 @@ export default function Homepage() {
   // Categories data
   const categories = [
     {
-      title: 'Camere e Suite',
+      title: 'Camere 5 Stelle',
       description: 'Letti, armadi e complementi d\'arredo per ambienti di riposo eleganti',
       imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
       imageAlt: 'Camera d\'hotel moderna'
     },
     {
-      title: 'Aree Comuni',
+      title: 'Camere 5 Stelle',
       description: 'Reception, lounge e spazi comuni con design contemporaneo',
       imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
       imageAlt: 'Reception hotel elegante'
     },
     {
-      title: 'Ristoranti e Bar',
+      title: 'Camere 5 Stelle',
       description: 'Tavoli, sedute e arredi per ristoranti e bar di hotel',
       imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
       imageAlt: 'Ristorante hotel'
     },
     {
-      title: 'Spa e Wellness',
+      title: 'Camere B&B',
       description: 'Arredi per centri benessere e spa con atmosfera rilassante',
       imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
       imageAlt: 'Spa hotel'
     },
-    {
-      title: 'Uffici e Meeting',
-      description: 'Sale riunioni e uffici con mobili funzionali e professionali',
-      imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
-      imageAlt: 'Sala meeting hotel'
-    },
-    {
-      title: 'Outdoor',
-      description: 'Arredi da esterno resistenti per terrazze e giardini',
-      imageUrl: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=600&fit=crop',
-      imageAlt: 'Terrazza hotel'
-    }
   ];
 
   // Projects data
