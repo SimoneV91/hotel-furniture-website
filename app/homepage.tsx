@@ -39,30 +39,32 @@ export default function Homepage() {
   // Projects data
   const projects = [
     {
-      title: 'Grand Hotel Milano',
-      location: 'Milano, Italia',
-      category: 'Hotel 5 stelle',
+      title: 'Camera ⭐⭐⭐',
+      description: 'Camere e spazi comuni su misura per un hotel 5 stelle nel cuore di Milano.',
+      priceFrom: 'da 2.500 € a camera',
       imageUrl: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop',
       imageAlt: 'Grand Hotel Milano'
     },
     {
-      title: 'Resort Costiera Amalfitana',
-      location: 'Amalfi, Italia',
-      category: 'Resort di lusso',
+      title: 'Camera ⭐⭐⭐⭐',
+      description: 'Arredi per camere, suite e aree lounge con vista sulla Costiera Amalfitana.',
+      priceFrom: 'da 3.200 € a camera',
       imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
       imageAlt: 'Resort Costiera Amalfitana'
     },
     {
-      title: 'Boutique Hotel Roma',
-      location: 'Roma, Italia',
-      category: 'Boutique Hotel',
+      title: 'Camera ⭐⭐⭐⭐⭐',
+      description: 'Soluzioni contract per un boutique hotel nel centro storico di Roma.',
+      priceFrom: 'da 2.800 € a camera',
       imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
       imageAlt: 'Boutique Hotel Roma'
     },
     {
-      title: 'B&B Napoleone',
+      title: 'B&B',
       location: 'Trentino, Italia',
       category: 'B&B',
+      description: 'Camere accoglienti in stile alpino per una struttura B&B in Trentino.',
+      priceFrom: 'da 1.800 € a camera',
       imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
       imageAlt: 'Spa Resort Dolomiti'
     }
@@ -72,9 +74,56 @@ export default function Homepage() {
     <main>
       {/* Hero Section */}
       <Hero />
-
-      {/* Company Preview Section */}
+      {/* Projects Preview Section */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
+              Le Nostre Camere
+            </h2>
+            <p className="text-lg text-sage-700 max-w-2xl mx-auto">
+               Alcune delle nostre camere, presenti in moltissime strutture del territorio nazionale
+            </p>
+          </div>
+
+          {/* Mobile: horizontal scroll like Amazon */}
+          <div className="-mx-4 px-4 md:hidden">
+            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="min-w-[260px] max-w-xs snap-start shrink-0"
+                >
+                  <ProjectPreview
+                    title={project.title}
+                    imageUrl={project.imageUrl}
+                    imageAlt={project.imageAlt}
+                    description={project.description}
+                    priceFrom={project.priceFrom}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: grid layout */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {projects.map((project, index) => (
+              <ProjectPreview
+                key={index}
+                title={project.title}
+                imageUrl={project.imageUrl}
+                imageAlt={project.imageAlt}
+                description={project.description}
+                priceFrom={project.priceFrom}
+              />
+            ))}
+          </div>
+
+        </div>
+      </section>
+      {/* Company Preview Section */}
+      <section className="py-20 bg-sage-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-6">
@@ -100,7 +149,7 @@ export default function Homepage() {
       </section>
 
       {/* Categories Preview Section */}
-      <section className="py-20 bg-sage-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
@@ -122,53 +171,10 @@ export default function Homepage() {
               />
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/catalogo"
-              className="bg-sage-900 text-white px-8 py-4 rounded-md hover:bg-sage-800 transition-colors font-medium inline-block"
-            >
-              Esplora tutti i prodotti
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Projects Preview Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
-              I Nostri Progetti
-            </h2>
-            <p className="text-lg text-sage-700 max-w-2xl mx-auto">
-              Alcuni dei progetti che abbiamo realizzato per strutture ricettive in tutta Italia
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {projects.map((project, index) => (
-              <ProjectPreview
-                key={index}
-                title={project.title}
-                location={project.location}
-                category={project.category}
-                imageUrl={project.imageUrl}
-                imageAlt={project.imageAlt}
-              />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/projects"
-              className="bg-sage-900 text-white px-8 py-4 rounded-md hover:bg-sage-800 transition-colors font-medium inline-block"
-            >
-              Vedi tutti i progetti
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-20 bg-sage-900 text-white">
@@ -182,7 +188,7 @@ export default function Homepage() {
               a creare ambienti di accoglienza unici e memorabili per i tuoi ospiti.
             </p>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="bg-white text-sage-900 px-8 py-4 rounded-md hover:bg-sage-100 transition-colors font-medium inline-block"
             >
               Richiedi un preventivo

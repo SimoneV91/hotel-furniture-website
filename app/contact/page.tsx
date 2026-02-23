@@ -156,7 +156,7 @@ export default function ContactPage() {
             </div>
 
             {/* Form Contatti */}
-            <div className="max-w-3xl mx-auto">
+            <div id="contact-form" className="max-w-3xl mx-auto scroll-mt-24">
                 <h2 className="text-3xl font-bold text-sage-900 mb-8">
                   Invia un Messaggio
                 </h2>

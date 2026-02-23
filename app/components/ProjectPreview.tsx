@@ -6,25 +6,25 @@ import Image from 'next/image';
  */
 interface ProjectPreviewProps {
   title: string;
-  location: string;
-  category: string;
   imageUrl: string;
   imageAlt: string;
+  description?: string;
+  priceFrom?: string;
 }
 
 export default function ProjectPreview({ 
   title, 
-  location, 
-  category,
-  imageUrl, 
-  imageAlt 
+  imageUrl,
+  imageAlt,
+  description,
+  priceFrom
 }: ProjectPreviewProps) {
   return (
     <Link 
       href="/projects" 
       className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
     >
-      <div className="relative h-80 overflow-hidden">
+      <div className="relative h-64 overflow-hidden">
         <Image
           src={imageUrl}
           alt={imageAlt}
@@ -33,14 +33,25 @@ export default function ProjectPreview({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <div className="p-6">
-        <span className="text-sm text-sage-500 uppercase tracking-wide">{category}</span>
-        <h3 className="text-xl font-semibold text-sage-900 mt-2 mb-1 group-hover:text-sage-700 transition-colors">
+      <div className="p-5 flex flex-col gap-2">
+        <h3 className="text-base font-semibold text-sage-900 group-hover:text-sage-700 transition-colors line-clamp-2">
           {title}
         </h3>
-        <p className="text-sage-600 text-sm">
-          {location}
-        </p>
+        {description && (
+          <p className="text-sage-700 text-sm mt-1 line-clamp-2">
+            {description}
+          </p>
+        )}
+        {priceFrom && (
+          <div className="mt-2 flex items-baseline gap-2">
+            <span className="text-xs uppercase tracking-wide text-sage-500">
+              Prezzo indicativo
+            </span>
+            <span className="text-lg font-semibold text-sage-900">
+              {priceFrom}
+            </span>
+          </div>
+        )}
       </div>
     </Link>
   );

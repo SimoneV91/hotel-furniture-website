@@ -30,7 +30,7 @@ export default function Hero() {
               Scopri i prodotti
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="bg-white text-sage-900 border-2 border-sage-900 px-8 py-4 rounded-md hover:bg-sage-50 transition-colors font-medium text-center inline-block"
             >
               Richiedi un preventivo

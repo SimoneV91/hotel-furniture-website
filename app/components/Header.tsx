@@ -55,7 +55,7 @@ export default function Header() {
               REFERENZE
             </Link>
             <a 
-              href="/listino-prezzi-2026.pdf" 
+              href="/Documents/Listino prezzi 2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
@@ -63,7 +63,8 @@ export default function Header() {
               LISTINO PREZZI 2026
             </a>
             <Link 
-              href="/istruzioni" 
+              href="/Documents/Istruzioni.pdf" 
+              target="_blank"
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
             >
               ISTRUZIONI
