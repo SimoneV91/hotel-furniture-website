@@ -36,6 +36,7 @@ const contactSchema = z.object({
   telefono: z.string().optional(),
   motivo: z.string().optional(),
   website: z.string().optional(), // Honeypot field
+  recaptchaToken: z.string().min(1, 'Token reCAPTCHA mancante'),
 });
 
 export async function POST(request: NextRequest) {
@@ -84,13 +85,123 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, email, message, citta, telefono, motivo } = validationResult.data;
+    const { name, email, message, citta, telefono, motivo, recaptchaToken } = validationResult.data;
 
     // Verifica che message esista (dovrebbe essere sempre presente dopo validazione)
     if (!message || message.trim() === '') {
       return NextResponse.json(
         { error: 'Il messaggio è obbligatorio' },
         { status: 400 }
+      );
+    }
+
+    // Verifica reCAPTCHA token
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!recaptchaSecret) {
+      console.error('RECAPTCHA_SECRET_KEY non configurata');
+      console.error('Variabili ambiente disponibili:', {
+        hasRecaptchaSecret: !!process.env.RECAPTCHA_SECRET_KEY,
+        hasResendKey: !!process.env.RESEND_API_KEY,
+        hasCompanyEmail: !!process.env.COMPANY_EMAIL,
+        envKeys: Object.keys(process.env).filter(k => k.includes('RECAPTCHA') || k.includes('RESEND') || k.includes('COMPANY'))
+      });
+      return NextResponse.json(
+        { error: 'Errore di configurazione del server' },
+        { status: 500 }
+      );
+    }
+
+    // Verifica formato chiave (dovrebbe iniziare con 6L e avere almeno 20 caratteri)
+    if (recaptchaSecret.length < 20 || !recaptchaSecret.startsWith('6L')) {
+      console.warn('RECAPTCHA_SECRET_KEY potrebbe avere formato non valido. Lunghezza:', recaptchaSecret.length);
+    }
+
+    // Log token ricevuto (solo primi caratteri per sicurezza)
+    const tokenPreview = recaptchaToken ? `${recaptchaToken.substring(0, 20)}...` : 'MANCANTE';
+    console.log('Token reCAPTCHA ricevuto:', tokenPreview);
+    console.log('Lunghezza token:', recaptchaToken?.length || 0);
+    console.log('RECAPTCHA_SECRET_KEY presente:', !!recaptchaSecret);
+
+    if (!recaptchaToken || recaptchaToken.trim() === '') {
+      console.error('Token reCAPTCHA vuoto o mancante');
+      return NextResponse.json(
+        { error: 'Token di sicurezza mancante. Ricarica la pagina e riprova.' },
+        { status: 400 }
+      );
+    }
+
+    try {
+      console.log('Inizio verifica reCAPTCHA con Google API...');
+      const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          secret: recaptchaSecret,
+          response: recaptchaToken,
+        }),
+      });
+
+      if (!recaptchaResponse.ok) {
+        console.error('Errore HTTP nella risposta reCAPTCHA:', recaptchaResponse.status, recaptchaResponse.statusText);
+        const errorText = await recaptchaResponse.text();
+        console.error('Corpo risposta errore:', errorText);
+        return NextResponse.json(
+          { error: 'Errore di comunicazione con il servizio di sicurezza' },
+          { status: 500 }
+        );
+      }
+
+      const recaptchaData = await recaptchaResponse.json();
+      console.log('Risposta completa Google reCAPTCHA:', JSON.stringify(recaptchaData, null, 2));
+
+      if (!recaptchaData.success) {
+        console.error('reCAPTCHA verification failed:', {
+          success: recaptchaData.success,
+          'error-codes': recaptchaData['error-codes'],
+          challenge_ts: recaptchaData.challenge_ts,
+          hostname: recaptchaData.hostname,
+        });
+        
+        // Messaggio errore più specifico in sviluppo
+        const errorMessage = process.env.NODE_ENV === 'development' 
+          ? `Verifica di sicurezza fallita. Errori: ${recaptchaData['error-codes']?.join(', ') || 'sconosciuto'}`
+          : 'Verifica di sicurezza fallita. Ricarica la pagina e riprova.';
+        
+        return NextResponse.json(
+          { 
+            error: errorMessage,
+            details: process.env.NODE_ENV === 'development' ? recaptchaData : undefined
+          },
+          { status: 400 }
+        );
+      }
+
+      // Verifica score (0.0 = bot, 1.0 = umano)
+      // Soglia consigliata: 0.5
+      const score = recaptchaData.score || 0;
+      console.log('reCAPTCHA score:', score, '| Hostname:', recaptchaData.hostname);
+      
+      if (score < 0.5) {
+        console.warn('reCAPTCHA score troppo basso:', score, '| Soglia minima: 0.5');
+        return NextResponse.json(
+          { error: 'Attività sospetta rilevata. Riprova più tardi.' },
+          { status: 400 }
+        );
+      }
+
+      console.log('reCAPTCHA verificato con successo, score:', score);
+    } catch (recaptchaError) {
+      console.error('Errore verifica reCAPTCHA (catch):', recaptchaError);
+      const errorMessage = recaptchaError instanceof Error ? recaptchaError.message : 'Errore sconosciuto';
+      console.error('Stack trace:', recaptchaError instanceof Error ? recaptchaError.stack : 'N/A');
+      return NextResponse.json(
+        { 
+          error: 'Errore durante la verifica di sicurezza',
+          details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+        },
+        { status: 500 }
       );
     }
 

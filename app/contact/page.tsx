@@ -4,11 +4,14 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 /**
  * Contact page - Contact information and contact form
  */
 export default function ContactPage() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  
   const [formData, setFormData] = useState({
     nome: '',
     citta: '',
@@ -77,6 +80,42 @@ export default function ContactPage() {
     setErrors({});
     
     try {
+      // Genera token reCAPTCHA
+      let recaptchaToken = '';
+      
+      console.log('Verifica disponibilità executeRecaptcha...');
+      if (!executeRecaptcha) {
+        console.error('reCAPTCHA non disponibile - executeRecaptcha è undefined');
+        console.log('Site Key configurata:', !!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
+        setErrors({ submit: 'Errore di sicurezza. Ricarica la pagina e riprova.' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      console.log('Generazione token reCAPTCHA per action: contact_form');
+      try {
+        recaptchaToken = await executeRecaptcha('contact_form');
+        
+        if (!recaptchaToken || recaptchaToken.trim() === '') {
+          console.error('Token reCAPTCHA generato ma vuoto');
+          setErrors({ submit: 'Errore di verifica sicurezza. Ricarica la pagina e riprova.' });
+          setIsSubmitting(false);
+          return;
+        }
+        
+        // Log solo primi caratteri per sicurezza
+        const tokenPreview = recaptchaToken.substring(0, 20);
+        console.log('Token reCAPTCHA generato con successo:', `${tokenPreview}...`);
+        console.log('Lunghezza token:', recaptchaToken.length);
+      } catch (recaptchaError) {
+        console.error('Errore generazione token reCAPTCHA:', recaptchaError);
+        const errorMessage = recaptchaError instanceof Error ? recaptchaError.message : 'Errore sconosciuto';
+        console.error('Dettagli errore:', errorMessage);
+        setErrors({ submit: 'Errore di verifica sicurezza. Ricarica la pagina e riprova.' });
+        setIsSubmitting(false);
+        return;
+      }
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -90,6 +129,7 @@ export default function ContactPage() {
           telefono: formData.telefono,
           motivo: formData.motivo,
           website: formData.website, // Honeypot
+          recaptchaToken: recaptchaToken,
         }),
       });
 
@@ -106,11 +146,29 @@ export default function ContactPage() {
       if (!response.ok) {
         // Gestione errori
         console.error('Errore API:', response.status, data);
+        
         if (response.status === 400) {
-          const errorMsg = data.error || 'Dati non validi. Controlla i campi inseriti.';
+          let errorMsg = data.error || 'Dati non validi. Controlla i campi inseriti.';
+          
+          // In sviluppo, mostra dettagli aggiuntivi se disponibili
+          if (process.env.NODE_ENV === 'development' && data.details) {
+            console.error('Dettagli errore 400:', data.details);
+            // Se ci sono errori reCAPTCHA specifici, aggiungili al messaggio
+            if (typeof data.details === 'object' && data.details['error-codes']) {
+              errorMsg += ` (Errori: ${data.details['error-codes'].join(', ')})`;
+            }
+          }
+          
           setErrors({ submit: errorMsg });
         } else if (response.status === 429) {
           setErrors({ submit: 'Troppe richieste. Riprova tra qualche minuto.' });
+        } else if (response.status === 500) {
+          const errorMsg = data.error || 'Errore durante l\'invio del messaggio. Riprova più tardi.';
+          // In sviluppo mostra anche i dettagli
+          if (process.env.NODE_ENV === 'development' && data.details) {
+            console.error('Dettagli errore 500:', data.details);
+          }
+          setErrors({ submit: errorMsg });
         } else {
           const errorMsg = data.error || 'Errore durante l\'invio del messaggio. Riprova più tardi.';
           // In sviluppo mostra anche i dettagli
