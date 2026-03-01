@@ -16,7 +16,8 @@ export default function ContactPage() {
     email: '',
     motivo: '',
     messaggio: '',
-    consenso: false
+    consenso: false,
+    website: '' // Honeypot field
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -73,10 +74,56 @@ export default function ContactPage() {
     }
 
     setIsSubmitting(true);
+    setErrors({});
     
-    // Simulazione invio form (qui puoi aggiungere la logica per inviare i dati al server)
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.nome,
+          email: formData.email,
+          message: formData.messaggio,
+          citta: formData.citta,
+          telefono: formData.telefono,
+          motivo: formData.motivo,
+          website: formData.website, // Honeypot
+        }),
+      });
+
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        console.error('Errore parsing risposta JSON:', jsonError);
+        setErrors({ submit: 'Errore nella risposta del server. Riprova più tardi.' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (!response.ok) {
+        // Gestione errori
+        console.error('Errore API:', response.status, data);
+        if (response.status === 400) {
+          const errorMsg = data.error || 'Dati non validi. Controlla i campi inseriti.';
+          setErrors({ submit: errorMsg });
+        } else if (response.status === 429) {
+          setErrors({ submit: 'Troppe richieste. Riprova tra qualche minuto.' });
+        } else {
+          const errorMsg = data.error || 'Errore durante l\'invio del messaggio. Riprova più tardi.';
+          // In sviluppo mostra anche i dettagli
+          if (process.env.NODE_ENV === 'development' && data.details) {
+            console.error('Dettagli errore:', data.details);
+          }
+          setErrors({ submit: errorMsg });
+        }
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Successo
       setSubmitSuccess(true);
       setFormData({
         nome: '',
@@ -85,14 +132,20 @@ export default function ContactPage() {
         email: '',
         motivo: '',
         messaggio: '',
-        consenso: false
+        consenso: false,
+        website: ''
       });
       
       // Reset del messaggio di successo dopo 5 secondi
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
-    }, 1000);
+    } catch (error) {
+      console.error('Errore invio form:', error);
+      setErrors({ submit: 'Errore di connessione. Verifica la tua connessione internet e riprova.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -176,6 +229,12 @@ export default function ContactPage() {
                   <div className="mb-6 p-4 bg-sage-200 border border-sage-300 rounded-lg text-sage-900">
                     <p className="font-medium">Messaggio inviato con successo!</p>
                     <p className="text-sm mt-1">Ti risponderemo il prima possibile.</p>
+                  </div>
+                )}
+
+                {errors.submit && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-300 rounded-lg text-red-900">
+                    <p className="font-medium">{errors.submit}</p>
                   </div>
                 )}
 
@@ -299,6 +358,20 @@ export default function ContactPage() {
                       rows={6}
                       className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent resize-vertical"
                       placeholder="Scrivi qui il tuo messaggio..."
+                    />
+                  </div>
+
+                  {/* Honeypot field - nascosto agli utenti */}
+                  <div style={{ display: 'none' }} aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
                     />
                   </div>
 
