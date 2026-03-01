@@ -1,13 +1,18 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import Hero from './components/Hero';
 import CategoryPreview from './components/CategoryPreview';
 import ProjectPreview from './components/ProjectPreview';
+import { projects } from './data/projects';
 
 /**
  * Homepage component - Main landing page content
  * Contains all sections: Hero, Company Preview, Categories, Projects, Final CTA
  */
 export default function Homepage() {
+  const [filter, setFilter] = useState<string>('all');
   // Categories data
   const categories = [
     {
@@ -36,40 +41,6 @@ export default function Homepage() {
     },
   ];
 
-  // Projects data
-  const projects = [
-    {
-      title: 'Camera ⭐⭐⭐',
-      description: 'Camere e spazi comuni su misura per un hotel 5 stelle nel cuore di Milano.',
-      priceFrom: 'da 2.500 € a camera',
-      imageUrl: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop',
-      imageAlt: 'Grand Hotel Milano'
-    },
-    {
-      title: 'Camera ⭐⭐⭐⭐',
-      description: 'Arredi per camere, suite e aree lounge con vista sulla Costiera Amalfitana.',
-      priceFrom: 'da 3.200 € a camera',
-      imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-      imageAlt: 'Resort Costiera Amalfitana'
-    },
-    {
-      title: 'Camera ⭐⭐⭐⭐⭐',
-      description: 'Soluzioni contract per un boutique hotel nel centro storico di Roma.',
-      priceFrom: 'da 2.800 € a camera',
-      imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-      imageAlt: 'Boutique Hotel Roma'
-    },
-    {
-      title: 'B&B',
-      location: 'Trentino, Italia',
-      category: 'B&B',
-      description: 'Camere accoglienti in stile alpino per una struttura B&B in Trentino.',
-      priceFrom: 'da 1.800 € a camera',
-      imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
-      imageAlt: 'Spa Resort Dolomiti'
-    }
-  ];
-
   return (
     <main>
       {/* Hero Section */}
@@ -81,44 +52,114 @@ export default function Homepage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
               Le Nostre Camere
             </h2>
-            <p className="text-lg text-sage-700 max-w-2xl mx-auto">
+            <p className="text-lg text-sage-700 max-w-2xl mx-auto mb-8">
                Alcune delle nostre camere, presenti in moltissime strutture del territorio nazionale
             </p>
-          </div>
-
-          {/* Mobile: horizontal scroll like Amazon */}
-          <div className="-mx-4 px-4 md:hidden">
-            <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
-              {projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="min-w-[260px] max-w-xs snap-start shrink-0"
-                >
-                  <ProjectPreview
-                    title={project.title}
-                    imageUrl={project.imageUrl}
-                    imageAlt={project.imageAlt}
-                    description={project.description}
-                    priceFrom={project.priceFrom}
-                  />
-                </div>
-              ))}
+            
+            {/* Filter Chips */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              <button
+                onClick={() => setFilter('all')}
+                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
+                  filter === 'all'
+                    ? 'bg-sage-900 text-white border-sage-900'
+                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
+                }`}
+              >
+                Tutte le camere
+              </button>
+              <button
+                onClick={() => setFilter('5')}
+                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
+                  filter === '5'
+                    ? 'bg-sage-900 text-white border-sage-900'
+                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
+                }`}
+              >
+                Camere 5 stelle
+              </button>
+              <button
+                onClick={() => setFilter('4')}
+                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
+                  filter === '4'
+                    ? 'bg-sage-900 text-white border-sage-900'
+                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
+                }`}
+              >
+                Camere 4 stelle
+              </button>
+              <button
+                onClick={() => setFilter('3')}
+                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
+                  filter === '3'
+                    ? 'bg-sage-900 text-white border-sage-900'
+                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
+                }`}
+              >
+                Camere 3 stelle
+              </button>
+              <button
+                onClick={() => setFilter('b&b')}
+                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
+                  filter === 'b&b'
+                    ? 'bg-sage-900 text-white border-sage-900'
+                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
+                }`}
+              >
+                B&B
+              </button>
             </div>
           </div>
 
-          {/* Desktop: grid layout */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {projects.map((project, index) => (
-              <ProjectPreview
-                key={index}
-                title={project.title}
-                imageUrl={project.imageUrl}
-                imageAlt={project.imageAlt}
-                description={project.description}
-                priceFrom={project.priceFrom}
-              />
-            ))}
-          </div>
+          {/* Filter logic */}
+          {(() => {
+            const filteredProjects = projects.filter((project) => {
+              if (filter === 'all') return true;
+              if (filter === '5') return project.title.includes('⭐⭐⭐⭐⭐');
+              if (filter === '4') return project.title.includes('⭐⭐⭐⭐');
+              if (filter === '3') return project.title.includes('⭐⭐⭐');
+              if (filter === 'b&b') return project.title === 'B&B';
+              return true;
+            });
+
+            return (
+              <>
+                      {/* Mobile: horizontal scroll like Amazon */}
+                <div className="-mx-4 px-4 md:hidden">
+                  <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+                    {filteredProjects.map((project, index) => (
+                      <div
+                        key={index}
+                        className="min-w-[260px] max-w-xs snap-start shrink-0"
+                      >
+                        <ProjectPreview
+                          title={project.title}
+                          imageUrl={project.imageUrl}
+                          imageAlt={project.imageAlt}
+                          description={project.description}
+                          priceFrom={project.priceFrom}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop: grid layout */}
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                  {filteredProjects.map((project, index) => (
+                    <ProjectPreview
+                      key={index}
+                      title={project.title}
+                      imageUrl={project.imageUrl}
+                      imageAlt={project.imageAlt}
+                      description={project.description}
+                      priceFrom={project.priceFrom}
+                    />
+                  ))}
+                </div>
+              </>
+            );
+          })()}
 
         </div>
       </section>

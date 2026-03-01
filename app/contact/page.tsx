@@ -2,6 +2,7 @@
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 import { useState } from 'react';
 
 /**
@@ -14,7 +15,8 @@ export default function ContactPage() {
     telefono: '',
     email: '',
     motivo: '',
-    messaggio: ''
+    messaggio: '',
+    consenso: false
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -22,8 +24,12 @@ export default function ContactPage() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? checked : value 
+    }));
     // Rimuovi l'errore quando l'utente inizia a digitare
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -51,6 +57,10 @@ export default function ContactPage() {
       newErrors.motivo = 'Seleziona un motivo di contatto';
     }
 
+    if (!formData.consenso) {
+      newErrors.consenso = 'È necessario accettare i termini e condizioni e la privacy policy';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -74,7 +84,8 @@ export default function ContactPage() {
         telefono: '',
         email: '',
         motivo: '',
-        messaggio: ''
+        messaggio: '',
+        consenso: false
       });
       
       // Reset del messaggio di successo dopo 5 secondi
@@ -289,6 +300,36 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent resize-vertical"
                       placeholder="Scrivi qui il tuo messaggio..."
                     />
+                  </div>
+
+                  {/* Consenso Privacy */}
+                  <div>
+                    <div className="flex items-start">
+                      <input
+                        type="checkbox"
+                        id="consenso"
+                        name="consenso"
+                        checked={formData.consenso}
+                        onChange={handleChange}
+                        className={`mt-1 h-4 w-4 text-sage-900 border-sage-300 rounded focus:ring-sage-500 ${
+                          errors.consenso ? 'border-red-500' : ''
+                        }`}
+                      />
+                      <label htmlFor="consenso" className="ml-3 text-sm text-sage-700">
+                        Ho letto e accetto i{' '}
+                        <Link href="/termini-e-condizioni" className="text-sage-900 font-semibold hover:text-sage-700 underline">
+                          termini e condizioni
+                        </Link>
+                        {' '}e la{' '}
+                        <Link href="/privacy-policy" className="text-sage-900 font-semibold hover:text-sage-700 underline">
+                          privacy policy
+                        </Link>
+                        . <span className="text-sage-600">*</span>
+                      </label>
+                    </div>
+                    {errors.consenso && (
+                      <p className="mt-1 text-sm text-red-600">{errors.consenso}</p>
+                    )}
                   </div>
 
                   {/* Submit Button */}

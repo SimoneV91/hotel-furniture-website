@@ -63,8 +63,7 @@ export default function Header() {
               LISTINO PREZZI 2026
             </a>
             <Link 
-              href="/Documents/Istruzioni.pdf" 
-              target="_blank"
+              href="/istruzioni" 
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
             >
               ISTRUZIONI
