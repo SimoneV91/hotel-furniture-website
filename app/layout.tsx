@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import RecaptchaProvider from "./components/RecaptchaProvider";
+import CookieConsentBanner from "./components/CookieConsentBanner";
+import AnalyticsScripts from "./components/analytics/AnalyticsScripts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +28,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RecaptchaProvider>
           {children}
         </RecaptchaProvider>
+
+        {/* Carica script non essenziali SOLO se l'utente ha accettato (vedi componente) */}
+        <AnalyticsScripts />
+
+        {/* Banner cookie (compare solo finché non viene espresso un consenso) */}
+        <CookieConsentBanner
+          companyName="Mobili per Albergo"
+          cookiePolicyHref="/cookie-policy"
+          privacyPolicyHref="/privacy-policy"
+        />
       </body>
     </html>
   )
