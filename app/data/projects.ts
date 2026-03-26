@@ -12,227 +12,362 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Camere e reception per hotel 4 stelle a Bologna nel centro storico.',
-    priceFrom: 'da 2.400 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Bologna'
+    title: 'HOTEL RIALTO SUISSE',
+    description: 'Camera in noce e grigio cemento goffrato con retrocomodini h.290, armadio a battenti e illuminazione integrata. Realizzazione su misura anche in versione ignifuga.',
+    priceFrom: 'da 3.211 € a camera',
+    // Nota: la directory in `public` è `immagini/camereHomePage` (Home, non Hotel)
+    imageUrl: '/immagini/camereHomePage/1-hotel-rialto-suisse.PNG',
+    imageAlt: 'Hotel Rialto Suisse'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Camere e spazi comuni su misura per un hotel 5 stelle nel cuore di Milano.',
-    priceFrom: 'da 2.500 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop',
-    imageAlt: 'Grand Hotel Milano'
+    title: 'HOTEL BOSTON',
+    description: 'Camera in legno olmo con testata a ponte e cabina armadio, realizzata su misura con illuminazione inclusa.',
+    priceFrom: 'da 4.700 € a camera',
+    imageUrl: '/immagini/camereHomePage/2-hotel-boston.PNG',
+    imageAlt: 'Hotel Boston'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Arredi funzionali per hotel 3 stelle a Bergamo con design pratico.',
-    priceFrom: 'da 1.800 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Bergamo'
+    title: 'HOTEL BOSTON',
+    description: 'Camera in noce con testata a ponte, disponibile in versione ignifuga o nobilitato.',
+    priceFrom: 'da 3.211 € a camera',
+    imageUrl: '/immagini/camereHomePage/3-hotel-boston.PNG',
+    imageAlt: 'Hotel Boston'
   },
   {
-    title: 'B&B',
-    description: 'Camere accoglienti in stile alpino per una struttura B&B in Trentino.',
-    priceFrom: 'da 1.800 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
-    imageAlt: 'B&B Trentino'
+    title: 'HOTEL BOSTON',
+    description: 'Camera in noce con testata in legno e cabina armadio, su misura con illuminazione.',
+    priceFrom: 'da 3.211 € a camera',
+    imageUrl: '/immagini/camereHomePage/4-hotel-boston.png',
+    imageAlt: 'Hotel Boston'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Arredamento completo per hotel 4 stelle a Napoli con stile contemporaneo.',
-    priceFrom: 'da 2.600 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Napoli'
+    title: 'GRUPPO SERVIZI BOSTON',
+    description: 'Gruppo servizi in legno olmo con scrivania e cabina armadio attrezzata con cassaforte e illuminazione.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/5-gruppo-servizi-boston.PNG',
+    imageAlt: 'Gruppo servizi Boston'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Suite di lusso e aree comuni per resort esclusivo sulla Costiera Amalfitana.',
-    priceFrom: 'da 3.800 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-    imageAlt: 'Resort Costiera Amalfitana'
+    title: 'TESTATA A CABINA',
+    description: 'Testata letto con cabina armadio integrata, ideale per camere business compatte.',
+    priceFrom: 'da 1.250 €',
+    imageUrl: '/immagini/camereHomePage/6-testata-letto-a-cabina-armadio.png',
+    imageAlt: 'Testata cabina'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Camere e spazi comuni per hotel 3 stelle a Brescia con comfort essenziale.',
-    priceFrom: 'da 1.700 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Brescia'
+    title: 'PARTICOLARE',
+    description: 'Testata elettrificata con vano tecnico, cornice e illuminazione LED.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/7-particolare.jpeg',
+    imageAlt: 'Dettaglio testata'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Soluzioni contract per hotel 4 stelle a Verona con design elegante.',
-    priceFrom: 'da 2.500 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Verona'
+    title: 'TESTATA A CABINA ARMADIO',
+    description: 'Testata a cabina armadio su misura in rovere o olmo.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/8-testata-a-cabina-armadio.PNG',
+    imageAlt: 'Testata cabina armadio'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Soluzioni contract per un boutique hotel nel centro storico di Roma.',
-    priceFrom: 'da 2.800 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-    imageAlt: 'Boutique Hotel Roma'
+    title: 'TESTATA LETTO A CABINA ARMADIO',
+    description: 'Testata a cabina armadio su misura in noce.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/9-testata-letto-a-cabina-armadio.PNG',
+    imageAlt: 'Testata cabina armadio noce'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Soluzioni contract per hotel 3 stelle a Parma con stile moderno.',
+    title: 'CAMERETTA GIRL',
+    description: 'Cameretta in melaminico con ottimo rapporto qualità/prezzo.',
     priceFrom: 'da 1.900 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Parma'
+    imageUrl: '/immagini/camereHomePage/10.png',
+    imageAlt: 'Cameretta Girl'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Arredi per camere, suite e aree lounge con vista sulla Costiera Amalfitana.',
-    priceFrom: 'da 3.200 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-    imageAlt: 'Resort Costiera Amalfitana'
+    title: 'CAMERETTA CANARINI',
+    description: 'Cameretta in melaminico con ottimo rapporto qualità/prezzo.',
+    priceFrom: 'da 1.900 € a camera',
+    imageUrl: '/immagini/camereHomePage/11.png',
+    imageAlt: 'Cameretta Canarini'
   },
   {
-    title: 'B&B',
-    description: 'Arredi rustici e accoglienti per B&B in Umbria con vista sulla campagna.',
-    priceFrom: 'da 1.500 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
-    imageAlt: 'B&B Umbria'
+    title: 'CAMERA OLMO',
+    description: 'Camera in laminato HPL ad alto spessore con struttura lignea.',
+    priceFrom: 'da 2.050 € a camera',
+    imageUrl: '/immagini/camereHomePage/12.png',
+    imageAlt: 'Camera Olmo'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Arredi di pregio per hotel di lusso a Firenze con design contemporaneo.',
-    priceFrom: 'da 3.200 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Firenze Centro'
+    title: 'HOTEL FERRARI MARANELLO',
+    description: 'Progetto camera hotel su misura.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/13-hotel-ferrari-maranello.png',
+    imageAlt: 'Hotel Ferrari Maranello'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Arredi per hotel 3 stelle a Modena con design funzionale e accogliente.',
-    priceFrom: 'da 1.800 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Modena'
+    title: 'CAMERA SARTO',
+    description: 'Camera in frassino bianco con dettagli in noce.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/14.png',
+    imageAlt: 'Camera Sarto'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Camere e spazi comuni per hotel 4 stelle a Padova con comfort moderno.',
-    priceFrom: 'da 2.300 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Padova'
+    title: 'HOTEL AIRONE',
+    description: 'Cameretta in melaminico con ottimo rapporto qualità/prezzo.',
+    priceFrom: 'da 1.900 € a camera',
+    imageUrl: '/immagini/camereHomePage/15-hotel-airone.png',
+    imageAlt: 'Hotel Airone'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Camere e suite esclusive per resort 5 stelle sul Lago di Como.',
-    priceFrom: 'da 3.500 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
-    imageAlt: 'Resort Lago di Como'
+    title: 'HOTEL FELLINI',
+    description: 'Progetto camera hotel su misura.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/16.png',
+    imageAlt: 'Hotel Fellini'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Camere e reception per hotel 3 stelle a Reggio Emilia con comfort moderno.',
-    priceFrom: 'da 1.750 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Reggio Emilia'
+    title: 'CAMERA CON SERVIZI SOSPESI',
+    description: 'Camera con gruppo servizi sospeso in alluminio e testata in legno.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/17.png',
+    imageAlt: 'Camera servizi sospesi'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Arredi per hotel 4 stelle a Rimini con vista sul mare Adriatico.',
-    priceFrom: 'da 2.700 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Rimini'
+    title: 'CAMERA SOSPIROLO',
+    description: 'Camera con retrocomodini, inserto in pelle e comodini in forte spessore.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/18.png',
+    imageAlt: 'Camera Sospirolo'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Arredamento contract per hotel di lusso a Venezia con vista sui canali.',
-    priceFrom: 'da 3.600 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Venezia'
+    title: 'CAMERA SIXTY',
+    description: 'Camera con testata in legno, comodini sospesi e gruppo servizi stile vintage anni 60.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/19.png',
+    imageAlt: 'Camera Sixty'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Arredamento per hotel 3 stelle a Ferrara con stile contemporaneo.',
-    priceFrom: 'da 1.850 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Ferrara'
+    title: 'CAMERA STAND',
+    description: 'Camera con carta da parati Glamora e design contemporaneo.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/20.png',
+    imageAlt: 'Camera Stand'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Camere e aree comuni per hotel 4 stelle a Pisa con stile moderno.',
-    priceFrom: 'da 2.400 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1595576508898-0a8ef5c27a08?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Pisa'
+    title: 'CAMERA MANSARDATA',
+    description: 'Camera mansardata con testata a fasce colorate.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/21.png',
+    imageAlt: 'Camera mansardata'
   },
   {
-    title: 'B&B',
-    description: 'Camere e spazi comuni per B&B in Puglia con design mediterraneo.',
-    priceFrom: 'da 1.400 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop',
-    imageAlt: 'B&B Puglia'
+    title: 'HOTEL DELTA',
+    description: 'Camera con testata in legno, comodino a cubo e gruppo servizi sospeso.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/22.png',
+    imageAlt: 'Hotel Delta'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Soluzioni su misura per resort esclusivo in Toscana con spa e wellness.',
-    priceFrom: 'da 4.000 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
-    imageAlt: 'Resort Toscana'
+    title: 'TESTATA BEST WESTERN',
+    description: 'Testata letto business per hotel.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/23.PNG',
+    imageAlt: 'Testata Best Western'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Soluzioni contract per hotel 3 stelle a Ravenna con design pratico.',
-    priceFrom: 'da 1.700 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Ravenna'
+    title: 'TESTATA BEST WESTERN VARIANTE',
+    description: 'Testata letto con inserto in pelle e forte spessore.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/24.PNG',
+    imageAlt: 'Testata Best Western pelle'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Soluzioni contract per hotel 4 stelle a Genova nel centro storico.',
-    priceFrom: 'da 2.500 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Genova'
+    title: 'TESTATA CABINA BOSTON',
+    description: 'Testata a cabina armadio ideale per camere business compatte.',
+    priceFrom: 'da 1.250 €',
+    imageUrl: '/immagini/camereHomePage/25.PNG',
+    imageAlt: 'Testata cabina Boston'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐⭐',
-    description: 'Camere e aree comuni per hotel 5 stelle a Torino con design moderno.',
-    priceFrom: 'da 2.900 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1595576508898-0a8ef5c27a08?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Torino'
+    title: 'TESTATA BEST WESTERN MATRIMONIALE',
+    description: 'Testata matrimoniale con inserto in pelle.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/26.PNG',
+    imageAlt: 'Testata matrimoniale'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Camere e aree comuni per hotel 3 stelle a Forlì con comfort essenziale.',
-    priceFrom: 'da 1.650 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Forlì'
+    title: 'AREE COMUNI PARK HOTEL',
+    description: 'Progetto aree comuni e reception.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/27-aree-comuni.PNG',
+    imageAlt: 'Reception Park Hotel'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Arredamento per hotel 4 stelle a Palermo con design mediterraneo.',
-    priceFrom: 'da 2.600 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Palermo'
+    title: 'CAMERA EMIRATI ARABI',
+    description: 'Camera custom made per mercato internazionale.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/28.PNG',
+    imageAlt: 'Camera Emirati'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Camere e suite per hotel 4 stelle a Catania con vista sull\'Etna.',
-    priceFrom: 'da 2.800 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Catania'
+    title: 'RECEPTION BEST WESTERN',
+    description: 'Progetto reception hotel.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/29.PNG',
+    imageAlt: 'Reception Best Western'
   },
   {
-    title: 'B&B',
-    description: 'Soluzioni contract per B&B in Marche con stile country elegante.',
-    priceFrom: 'da 1.600 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop',
-    imageAlt: 'B&B Marche'
+    title: 'HOTEL RESIDENCE ALPEN',
+    description: 'Camera in faggio con armadio a due ante e finiture bianche.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/30.PNG',
+    imageAlt: 'Hotel Alpen'
   },
   {
-    title: 'Camera ⭐⭐⭐⭐',
-    description: 'Arredi per hotel 4 stelle a Lucca con design elegante e raffinato.',
-    priceFrom: 'da 2.550 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1595576508898-0a8ef5c27a08?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Lucca'
+    title: 'CAMERA MOGANO',
+    description: 'Camera classica in mogano con arredi completi.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/31.PNG',
+    imageAlt: 'Camera mogano'
   },
   {
-    title: 'Camera ⭐⭐⭐',
-    description: 'Arredamento funzionale per hotel 3 stelle a Cremona con comfort moderno.',
-    priceFrom: 'da 1.720 € a camera',
-    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
-    imageAlt: 'Hotel Cremona'
+    title: 'HOTEL GERMANIA',
+    description: 'Camera in rovere ignifugo.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/32.PNG',
+    imageAlt: 'Hotel Germania'
+  },
+  {
+    title: 'APART HOTEL MYRA',
+    description: 'Progetto apart hotel.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/33-camere-myra.png',
+    imageAlt: 'Apart Hotel Myra'
+  },
+  {
+    title: 'CAMERA MODERNA',
+    description: 'Camera con armadio a giorno e scrivania sospesa.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/34.PNG',
+    imageAlt: 'Camera moderna'
+  },
+  {
+    title: 'CAMERA ELEGANTE',
+    description: 'Camera elegante con testata capitonné e boiserie luminosa.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/35.PNG',
+    imageAlt: 'Camera elegante'
+  },
+  {
+    title: 'CAMERA SMART',
+    description: 'Camera con domotica avanzata e arredi in rovere.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/36.PNG',
+    imageAlt: 'Camera smart'
+  },
+  {
+    title: 'CAMERA INDUSTRIAL',
+    description: 'Camera stile industrial con arredi minimali e pavimenti in cotto.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/37-edelvise-village.png',
+    imageAlt: 'Camera industrial'
+  },
+  {
+    title: 'CAMERA BUSINESS',
+    description: 'Camera business con scrivania attrezzata e coffee station.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/38-gruppo-servizi-business.PNG',
+    imageAlt: 'Camera business'
+  },
+  {
+    title: 'CAMERA NOCE',
+    description: 'Camera classico-contemporanea in noce con dettagli in ecopelle.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/39-gruppo-servizi-noce.PNG',
+    imageAlt: 'Camera noce'
+  },
+  {
+    title: 'CAMERA PANORAMICA',
+    description: 'Camera doppia luminosa con vista mare e arredi moderni.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/40-hotel-geneve.PNG',
+    imageAlt: 'Camera vista mare'
+  },
+  {
+    title: 'HOTEL SANREMO',
+    description: 'Camera sartoriale in frassino con dettagli in noce.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/41-hotel-sarto.png',
+    imageAlt: 'Hotel Sanremo'
+  },
+  {
+    title: 'CAMERA MINIMAL',
+    description: 'Camera con design lineare e inserti in pelle nera.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/42-london.PNG',
+    imageAlt: 'Camera minimal'
+  },
+  {
+    title: 'CAMERA ALPINA',
+    description: 'Camera twin con boiserie in legno e toni naturali.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/43-modello-svizzera.PNG',
+    imageAlt: 'Camera alpina'
+  },
+  {
+    title: 'CAMERA BORDEAUX',
+    description: 'Camera con testata trapuntata e boiserie in legno.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/44-motel-bergamo.png',
+    imageAlt: 'Camera bordeaux'
+  },
+  {
+    title: 'CAMERA MOTEL',
+    description: 'Camera moderna con accenti giallo senape e balcone.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/45-motel-rovigo.PNG',
+    imageAlt: 'Camera motel'
+  },
+  {
+    title: 'CAMERA RUSSIA CLASSIC',
+    description: 'Camera con zona servizi in stile barocco e finiture oro.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/46-russian-gruppo-servizi.PNG',
+    imageAlt: 'Camera Russia classica'
+  },
+  {
+    title: 'CAMERA RUSSIA LUXURY',
+    description: 'Camera barocca con mobili intarsiati e tessuti damascati.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/47-russian-suite.PNG',
+    imageAlt: 'Camera Russia luxury'
+  },
+  {
+    title: 'SUITE IMPERIALE',
+    description: 'Suite di lusso con testata monumentale e dettagli in oro.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/48-russian.PNG',
+    imageAlt: 'Suite imperiale'
+  },
+  {
+    title: 'CAMERA ROMANTICA',
+    description: 'Suite romantica con atmosfera elegante e dettagli raffinati.',
+    priceFrom: 'da 1.900 € a camera',
+    imageUrl: '/immagini/camereHomePage/49-sexy-hotel.PNG',
+    imageAlt: 'Camera romantica'
+  },
+  {
+    title: 'CAMERA DOPPIA MODERNA',
+    description: 'Camera doppia moderna con arredi in rovere e zona desk.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/50.PNG',
+    imageAlt: 'Camera doppia moderna'
+  },
+  {
+    title: 'CAMERA HOTEL 3 STELLE',
+    description: 'Camera design con testata in legno e dettagli contemporanei.',
+    priceFrom: '',
+    imageUrl: '/immagini/camereHomePage/51.PNG',
+    imageAlt: 'Camera hotel design'
   }
 ];
+

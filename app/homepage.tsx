@@ -145,7 +145,7 @@ export default function Homepage() {
                 </div>
 
                 {/* Desktop: grid layout */}
-                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 items-stretch gap-6 lg:gap-8">
                   {filteredProjects.map((project, index) => (
                     <ProjectPreview
                       key={index}

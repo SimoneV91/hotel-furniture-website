@@ -42,16 +42,16 @@ export default function ProjectPreview({
             {description}
           </p>
         )}
-        {priceFrom && (
-          <div className="mt-2 flex items-baseline gap-2">
-            <span className="text-xs uppercase tracking-wide text-sage-500">
-              Prezzo indicativo
-            </span>
-            <span className="text-lg font-semibold text-sage-900">
-              {priceFrom}
-            </span>
-          </div>
-        )}
+
+      <div className="mt-2 flex items-baseline gap-2">
+        <span className="text-xs uppercase text-sage-500">
+          {priceFrom ? 'Prezzo indicativo' : 'Prezzo su richiesta'}
+        </span>
+        <span className="text-lg font-semibold text-sage-900">
+          {priceFrom || '\u00A0'} 
+        </span>
+      </div>
+      
       </div>
     </Link>
   );
