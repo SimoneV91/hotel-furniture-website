@@ -37,6 +37,13 @@ const contactSchema = z.object({
   motivo: z.string().optional(),
   website: z.string().optional(), // Honeypot field
   recaptchaToken: z.string().min(1, 'Token reCAPTCHA mancante'),
+  context: z
+    .object({
+      sourcePage: z.string().max(500).optional(),
+      cardTitle: z.string().max(300).optional(),
+      cardDescription: z.string().max(5000).optional(),
+    })
+    .optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -85,7 +92,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, email, message, citta, telefono, motivo, recaptchaToken } = validationResult.data;
+    const { name, email, message, citta, telefono, motivo, recaptchaToken, context } = validationResult.data;
 
     // Verifica che message esista (dovrebbe essere sempre presente dopo validazione)
     if (!message || message.trim() === '') {
@@ -246,6 +253,20 @@ export async function POST(request: NextRequest) {
               <h1>Nuova Richiesta di Contatto</h1>
             </div>
             <div class="content">
+              ${
+                context?.cardTitle || context?.cardDescription || context?.sourcePage
+                  ? `
+              <div class="field">
+                <div class="label">Richiesta da:</div>
+                <div class="value">
+                  ${context?.cardTitle ? `<div><strong>Card:</strong> ${context.cardTitle}</div>` : ''}
+                  ${context?.cardDescription ? `<div style="margin-top: 6px;"><strong>Descrizione:</strong><br>${context.cardDescription.replace(/\n/g, '<br>')}</div>` : ''}
+                  ${context?.sourcePage ? `<div style="margin-top: 6px;"><strong>Pagina:</strong> ${context.sourcePage}</div>` : ''}
+                </div>
+              </div>
+              `
+                  : ''
+              }
               <div class="field">
                 <div class="label">Nome e Cognome:</div>
                 <div class="value">${name}</div>

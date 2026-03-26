@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import Hero from './components/Hero';
 import CategoryPreview from './components/CategoryPreview';
 import ProjectPreview from './components/ProjectPreview';
+import ContactRequestModal from './components/ContactRequestModal';
 import { projects } from './data/projects';
 
 /**
@@ -13,6 +15,8 @@ import { projects } from './data/projects';
  */
 export default function Homepage() {
   const [filter, setFilter] = useState<string>('all');
+  const pathname = usePathname();
+  const [selectedProject, setSelectedProject] = useState<{ title: string; description?: string } | null>(null);
   // Categories data
   const categories = [
     {
@@ -125,7 +129,7 @@ export default function Homepage() {
             return (
               <>
                       {/* Mobile: horizontal scroll like Amazon */}
-                <div className="-mx-4 px-4 md:hidden">
+                {/* <div className="-mx-4 px-4 md:hidden">
                   <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
                     {filteredProjects.map((project, index) => (
                       <div
@@ -138,11 +142,30 @@ export default function Homepage() {
                           imageAlt={project.imageAlt}
                           description={project.description}
                           priceFrom={project.priceFrom}
+                          onClick={() => setSelectedProject({ title: project.title, description: project.description })}
                         />
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
+
+                {/* Mobile: vertical scroll */}
+<div className="md:hidden max-h-[500px] overflow-y-auto px-4">
+  <div className="flex flex-col gap-4">
+    {filteredProjects.map((project, index) => (
+      <ProjectPreview
+        key={index}
+        title={project.title}
+        imageUrl={project.imageUrl}
+        imageAlt={project.imageAlt}
+        description={project.description}
+        priceFrom={project.priceFrom}
+        onClick={() => setSelectedProject({ title: project.title, description: project.description })}
+      />
+    ))}
+  </div>
+</div>
+
 
                 {/* Desktop: grid layout */}
                 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 items-stretch gap-6 lg:gap-8">
@@ -154,6 +177,7 @@ export default function Homepage() {
                       imageAlt={project.imageAlt}
                       description={project.description}
                       priceFrom={project.priceFrom}
+                      onClick={() => setSelectedProject({ title: project.title, description: project.description })}
                     />
                   ))}
                 </div>
@@ -163,6 +187,15 @@ export default function Homepage() {
 
         </div>
       </section>
+      <ContactRequestModal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        context={{
+          sourcePage: pathname,
+          cardTitle: selectedProject?.title,
+          cardDescription: selectedProject?.description,
+        }}
+      />
       {/* Company Preview Section */}
       <section className="py-20 bg-sage-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

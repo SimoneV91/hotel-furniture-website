@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 
 /**
@@ -10,6 +9,7 @@ interface ProjectPreviewProps {
   imageAlt: string;
   description?: string;
   priceFrom?: string;
+  onClick?: () => void;
 }
 
 export default function ProjectPreview({ 
@@ -17,12 +17,14 @@ export default function ProjectPreview({
   imageUrl,
   imageAlt,
   description,
-  priceFrom
+  priceFrom,
+  onClick,
 }: ProjectPreviewProps) {
   return (
-    <Link 
-      href="/projects" 
-      className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+    <button
+      type="button"
+      onClick={onClick}
+      className="group flex h-[400px] w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
     >
       <div className="relative h-64 overflow-hidden">
         <Image
@@ -33,12 +35,12 @@ export default function ProjectPreview({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <div className="p-5 flex flex-col gap-2">
+      <div className="p-5 flex flex-1 flex-col gap-2">
         <h3 className="text-base font-semibold text-sage-900 group-hover:text-sage-700 transition-colors line-clamp-2">
           {title}
         </h3>
         {description && (
-          <p className="text-sage-700 text-sm mt-1 line-clamp-2">
+          <p className="text-sage-700 text-sm mt-1 line-clamp-2">            
             {description}
           </p>
         )}
@@ -48,11 +50,11 @@ export default function ProjectPreview({
           {priceFrom ? 'Prezzo indicativo' : 'Prezzo su richiesta'}
         </span>
         <span className="text-lg font-semibold text-sage-900">
-          {priceFrom || '\u00A0'} 
+          {priceFrom || '\u00A0'}
         </span>
       </div>
-      
+
       </div>
-    </Link>
+    </button>
   );
 }
