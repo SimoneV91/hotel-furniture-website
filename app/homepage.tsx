@@ -205,7 +205,7 @@ export default function Homepage() {
             </h2>
             <p className="text-lg text-sage-700 mb-8 leading-relaxed">
               Siamo specializzati nella progettazione e realizzazione di arredi contract 
-              per hotel, alberghi e strutture ricettive. Con oltre 20 anni di esperienza 
+              per hotel, alberghi e strutture ricettive. Con oltre 40 anni di esperienza 
               nel settore, offriamo soluzioni su misura che combinano design contemporaneo, 
               qualità dei materiali e funzionalità per creare ambienti di accoglienza unici.
             </p>

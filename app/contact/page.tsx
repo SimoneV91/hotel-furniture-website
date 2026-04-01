@@ -232,7 +232,7 @@ export default function ContactPage() {
                 Informazioni di Contatto
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-sage-200 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">

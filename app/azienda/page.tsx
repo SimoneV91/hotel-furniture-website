@@ -35,7 +35,7 @@ export default function AziendaPage() {
               </div>
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-sage-700 mb-6 leading-relaxed">
-                  Con oltre <strong className="text-sage-900">20 anni di esperienza</strong> nel settore dell'arredamento contract, 
+                  Con oltre <strong className="text-sage-900">40 anni di esperienza</strong> nel settore dell'arredamento contract, 
                   ci siamo specializzati nella progettazione e realizzazione di soluzioni su misura per hotel, 
                   alberghi e strutture ricettive di ogni categoria.
                 </p>
@@ -156,18 +156,14 @@ export default function AziendaPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-sage-900 mb-2">20+</div>
+                  <div className="text-5xl font-bold text-sage-900 mb-2">40+</div>
                   <div className="text-sage-700 font-medium">Anni di Esperienza</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-sage-900 mb-2">500+</div>
-                  <div className="text-sage-700 font-medium">Progetti Completati</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-sage-900 mb-2">200+</div>
-                  <div className="text-sage-700 font-medium">Clienti Soddisfatti</div>
+                  <div className="text-5xl font-bold text-sage-900 mb-2">700+</div>
+                  <div className="text-sage-700 font-medium">Hotel arredati</div>
                 </div>
                 <div className="text-center">
                   <div className="text-5xl font-bold text-sage-900 mb-2">100%</div>

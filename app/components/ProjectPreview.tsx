@@ -24,8 +24,9 @@ export default function ProjectPreview({
     <button
       type="button"
       onClick={onClick}
-      className="group flex h-[400px] w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
+      className="group flex h-[520px] w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
     >
+      {/* Fixed-size image area to keep all cards uniform */}
       <div className="relative h-64 overflow-hidden">
         <Image
           src={imageUrl}
@@ -45,7 +46,7 @@ export default function ProjectPreview({
           </p>
         )}
 
-      <div className="mt-2 flex items-baseline gap-2">
+      <div className="mt-auto flex items-baseline gap-2 pt-2">
         <span className="text-xs uppercase text-sage-500">
           {priceFrom ? 'Prezzo indicativo' : 'Prezzo su richiesta'}
         </span>
