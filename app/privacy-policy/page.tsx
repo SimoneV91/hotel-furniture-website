@@ -32,8 +32,8 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p className="text-sage-700 mb-6 leading-relaxed">
                 Il titolare del trattamento dei dati personali è <strong className="text-sage-900">Mobili per Albergo</strong> 
-                (di seguito "Titolare" o "Azienda"), con sede in Via dell'Esempio, 123 - 00100 Roma, Italia. 
-                Email: info@mobiliperalbergo.it - Tel: +39 000 000 0000.
+                (di seguito "Titolare" o "Azienda"), con sede in Via Suoi, 24 - 31053 Pieve di Soligo TV. 
+                Email: mobiliperalbergo@gmail.com. P.IVA 04082250269.
               </p>
 
               <h2 className="text-2xl sm:text-3xl font-bold text-sage-900 mb-4">
@@ -122,8 +122,8 @@ export default function PrivacyPolicyPage() {
               </ul>
               <p className="text-sage-700 mb-6 leading-relaxed">
                 Per esercitare i propri diritti, l'interessato può contattare il Titolare all'indirizzo email: 
-                <a href="mailto:info@mobiliperalbergo.it" className="text-sage-900 font-semibold hover:text-sage-700 underline ml-1">
-                  info@mobiliperalbergo.it
+                <a href="mailto:mobiliperalbergo@gmail.com" className="text-sage-900 font-semibold hover:text-sage-700 underline ml-1">
+                  mobiliperalbergo@gmail.com
                 </a>
               </p>
 
@@ -163,18 +163,13 @@ export default function PrivacyPolicyPage() {
               <div className="bg-sage-50 border border-sage-200 rounded-lg p-6 mb-6">
                 <p className="text-sage-700 mb-2">
                   <strong className="text-sage-900">Email:</strong>{' '}
-                  <a href="mailto:info@mobiliperalbergo.it" className="text-sage-900 font-semibold hover:text-sage-700 underline">
-                    info@mobiliperalbergo.it
+                  <a href="mailto:mobiliperalbergo@gmail.com" className="text-sage-900 font-semibold hover:text-sage-700 underline">
+                    mobiliperalbergo@gmail.com
                   </a>
                 </p>
-                <p className="text-sage-700 mb-2">
-                  <strong className="text-sage-900">Telefono:</strong>{' '}
-                  <a href="tel:+39000000000" className="text-sage-900 font-semibold hover:text-sage-700">
-                    +39 000 000 0000
-                  </a>
-                </p>
+                
                 <p className="text-sage-700">
-                  <strong className="text-sage-900">Indirizzo:</strong> Via dell'Esempio, 123 - 00100 Roma, Italia
+                  <strong className="text-sage-900">Indirizzo:</strong> Via Suoi, 24 - 31053 Pieve di Soligo TV
                 </p>
               </div>
             </div>

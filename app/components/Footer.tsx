@@ -64,8 +64,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contatti</h4>
             <ul className="space-y-2 text-sage-400">
-              <li>Email: info@mobiliperalbergo.it</li>
-              <li>Tel: +39 000 000 0000</li>
+              <li>Email: <a href="mailto:mobiliperalbergo@gmail.com" className="hover:text-white transition-colors">mobiliperalbergo@gmail.com</a></li>
+              <li>P.IVA 04082250269</li>
+              <li>Via Suoi, 24 - 31053 Pieve di Soligo TV</li>
             </ul>
           </div>
         </div>

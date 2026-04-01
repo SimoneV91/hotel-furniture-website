@@ -68,26 +68,26 @@ export default function Header() {
             >
               CATALOGO
             </Link>
-            <Link 
+            {/* <Link 
               href="/projects" 
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
             >
               PROGETTI
-            </Link>
+            </Link> */}
             <Link 
               href="/referenze" 
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
             >
               REFERENZE
             </Link>
-            <a 
+            {/* <a 
               href="/Documents/Listino prezzi 2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
             >
               LISTINO PREZZI 2026
-            </a>
+            </a> */}
             <Link 
               href="/istruzioni" 
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"

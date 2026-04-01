@@ -22,7 +22,6 @@ export default function ContactRequestForm({
   const [formData, setFormData] = useState({
     nome: '',
     citta: '',
-    telefono: '',
     email: '',
     motivo: 'richiesta_progetto',
     messaggio: '',
@@ -92,7 +91,6 @@ export default function ContactRequestForm({
           email: formData.email,
           message: formData.messaggio,
           citta: formData.citta,
-          telefono: formData.telefono,
           motivo: formData.motivo,
           website: formData.website,
           recaptchaToken,
@@ -111,7 +109,6 @@ export default function ContactRequestForm({
       setFormData({
         nome: '',
         citta: '',
-        telefono: '',
         email: '',
         motivo: 'richiesta_progetto',
         messaggio: '',
@@ -194,17 +191,7 @@ export default function ContactRequestForm({
         {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-sage-900 mb-2">Numero di Telefono</label>
-        <input
-          type="tel"
-          name="telefono"
-          value={formData.telefono}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
-          placeholder="+39 123 456 7890"
-        />
-      </div>
+      
 
       <div>
         <label className="block text-sm font-medium text-sage-900 mb-2">Messaggio</label>

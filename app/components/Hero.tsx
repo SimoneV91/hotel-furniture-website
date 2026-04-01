@@ -7,7 +7,8 @@ export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-sage-50 to-sage-100 py-24 sm:py-32 lg:py-40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl"
+        >
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-sage-900 mb-6 leading-tight">
             Arredamento Contract

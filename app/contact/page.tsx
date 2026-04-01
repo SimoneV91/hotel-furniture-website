@@ -242,24 +242,11 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-sage-900 mb-2">Indirizzo</h3>
                   <p className="text-sage-700">
-                    Via dell'Esempio, 123<br />
-                    00100 Roma, Italia
+                    Via Suoi, 24 - 31053 Pieve di Soligo TV
                   </p>
                 </div>
 
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-sage-200 rounded-lg flex items-center justify-center mb-4">
-                    <svg className="w-8 h-8 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-sage-900 mb-2">Telefono</h3>
-                  <p className="text-sage-700">
-                    <a href="tel:+39000000000" className="hover:text-sage-900 transition-colors">
-                      +39 000 000 0000
-                    </a>
-                  </p>
-                </div>
+                
 
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-sage-200 rounded-lg flex items-center justify-center mb-4">
@@ -269,8 +256,8 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-sage-900 mb-2">Email</h3>
                   <p className="text-sage-700">
-                    <a href="mailto:info@mobiliperalbergo.it" className="hover:text-sage-900 transition-colors">
-                      info@mobiliperalbergo.it
+                    <a href="mailto:mobiliperalbergo@gmail.com" className="hover:text-sage-900 transition-colors">
+                      mobiliperalbergo@gmail.com
                     </a>
                   </p>
                 </div>
@@ -339,21 +326,7 @@ export default function ContactPage() {
                     )}
                   </div>
 
-                  {/* Telefono */}
-                  <div>
-                    <label htmlFor="telefono" className="block text-sm font-medium text-sage-900 mb-2">
-                      Numero di Telefono
-                    </label>
-                    <input
-                      type="tel"
-                      id="telefono"
-                      name="telefono"
-                      value={formData.telefono}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
-                      placeholder="+39 123 456 7890"
-                    />
-                  </div>
+                  
 
                   {/* Email */}
                   <div>
