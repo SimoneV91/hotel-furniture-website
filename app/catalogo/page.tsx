@@ -11,25 +11,25 @@ export default function CatalogoPage() {
     {
       title: 'Camere 5 Stelle',
       description: 'Letti, armadi e complementi d\'arredo per ambienti di riposo eleganti',
-      imageUrl: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop',
+      imageUrl: '/immagini/Catalogo/5stelle.jpg',
       imageAlt: 'Camera d\'hotel moderna'
     },
     {
       title: 'Camere 4 Stelle',
       description: 'Reception, lounge e spazi comuni con design contemporaneo',
-      imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
+      imageUrl: '/immagini/Catalogo/4stelle.jpg',
       imageAlt: 'Reception hotel elegante'
     },
     {
       title: 'Camere 3 Stelle',
       description: 'Tavoli, sedute e arredi per ristoranti e bar di hotel',
-      imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
+      imageUrl: '/immagini/Catalogo/3stelle.jpg',
       imageAlt: 'Ristorante hotel'
     },
     {
       title: 'Camere B&B',
       description: 'Arredi per centri benessere e spa con atmosfera rilassante',
-      imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop',
+      imageUrl: '/immagini/Catalogo/b&B.jpg',
       imageAlt: 'Spa hotel'
     },
   ];
