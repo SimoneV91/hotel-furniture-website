@@ -73,7 +73,13 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-sage-800 mt-12 pt-8 text-center text-sage-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Mobili per Albergo. Tutti i diritti riservati.</p>
+          <p>
+            P.IVA 04082250269 - Produzione a Pieve di Soligo (TV) - 31053 - Via Suoi, 24 -{' '}
+            <a href="mailto:mobiliperalbergo@gmail.com" className="underline hover:text-sage-300 transition-colors">
+              mobiliperalbergo@gmail.com
+            </a>{' '}
+            - <Link href="/privacy-policy" className="underline hover:text-sage-300 transition-colors">Privacy</Link>
+          </p>
         </div>
       </div>
     </footer>
