@@ -62,12 +62,60 @@ export default function Header() {
             >
               AZIENDA
             </Link>
-            <Link 
-              href="/catalogo" 
-              className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
-            >
-              CATALOGO
-            </Link>
+            {/* Catalogo with hover submenu (desktop) */}
+            <div className="relative group">
+              <Link 
+                href="/catalogo" 
+                className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
+              >
+                CATALOGO
+              </Link>
+              {/* Submenu - visible on hover/focus */}
+              <div
+                className="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-opacity duration-150 absolute left-0 top-full mt-2 w-56 rounded-md border border-sage-200 bg-white shadow-lg"
+                role="menu"
+                aria-label="Sottomenù Catalogo"
+              >
+                <ul className="py-2">
+                  <li>
+                    <Link
+                      href="/catalogo?cat=5"
+                      className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
+                      role="menuitem"
+                    >
+                      Camere 5 stelle
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/catalogo?cat=4"
+                      className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
+                      role="menuitem"
+                    >
+                      Camere 4 stelle
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/catalogo?cat=3"
+                      className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
+                      role="menuitem"
+                    >
+                      Camere 3 stelle
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/catalogo?cat=bb"
+                      className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
+                      role="menuitem"
+                    >
+                      Camere B&B
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
             {/* <Link 
               href="/projects" 
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"

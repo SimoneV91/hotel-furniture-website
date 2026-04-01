@@ -128,26 +128,7 @@ export default function Homepage() {
 
             return (
               <>
-                      {/* Mobile: horizontal scroll like Amazon */}
-                {/* <div className="-mx-4 px-4 md:hidden">
-                  <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
-                    {filteredProjects.map((project, index) => (
-                      <div
-                        key={index}
-                        className="min-w-[260px] max-w-xs snap-start shrink-0"
-                      >
-                        <ProjectPreview
-                          title={project.title}
-                          imageUrl={project.imageUrl}
-                          imageAlt={project.imageAlt}
-                          description={project.description}
-                          priceFrom={project.priceFrom}
-                          onClick={() => setSelectedProject({ title: project.title, description: project.description })}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
+            
 
                 {/* Mobile: vertical scroll */}
 <div className="md:hidden max-h-[500px] overflow-y-auto px-4">
