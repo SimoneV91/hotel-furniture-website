@@ -61,7 +61,6 @@ function makeConsent(categories: Partial<CookieConsent['categories']>): CookieCo
       analytics: false,
       marketing: false,
       ...categories,
-      necessary: true,
     },
   };
 }
