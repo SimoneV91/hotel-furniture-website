@@ -72,14 +72,14 @@ export default function Header() {
               </Link>
               {/* Submenu - visible on hover/focus */}
               <div
-                className="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-opacity duration-150 absolute left-0 top-full mt-2 w-56 rounded-md border border-sage-200 bg-white shadow-lg"
+                className="absolute left-0 top-full pt-2 z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-opacity duration-150"
                 role="menu"
                 aria-label="Sottomenù Catalogo"
               >
-                <ul className="py-2">
+                <ul className="py-2 w-56 rounded-md border border-sage-200 bg-white shadow-lg">
                   <li>
                     <Link
-                      href="/catalogo?cat=5"
+                      href="/catalogo/5-stelle"
                       className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                       role="menuitem"
                     >
@@ -88,7 +88,7 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
-                      href="/catalogo?cat=4"
+                      href="/catalogo/4-stelle"
                       className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                       role="menuitem"
                     >
@@ -97,7 +97,7 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
-                      href="/catalogo?cat=3"
+                      href="/catalogo/3-stelle"
                       className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                       role="menuitem"
                     >
@@ -106,7 +106,7 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
-                      href="/catalogo?cat=bb"
+                      href="/catalogo/bb"
                       className="block px-4 py-2 text-sage-700 hover:bg-sage-50 hover:text-sage-900 transition-colors"
                       role="menuitem"
                     >

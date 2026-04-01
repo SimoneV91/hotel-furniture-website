@@ -223,6 +223,12 @@ export default function Homepage() {
                 description={category.description}
                 imageUrl={category.imageUrl}
                 imageAlt={category.imageAlt}
+                href={
+                  category.title.includes('5') ? '/catalogo/5-stelle' :
+                  category.title.includes('4') ? '/catalogo/4-stelle' :
+                  category.title.includes('3') ? '/catalogo/3-stelle' :
+                  '/catalogo/bb'
+                }
               />
             ))}
           </div>

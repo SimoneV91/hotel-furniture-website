@@ -9,17 +9,19 @@ interface CategoryPreviewProps {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  href: string;
 }
 
 export default function CategoryPreview({ 
   title, 
   description, 
   imageUrl, 
-  imageAlt 
+  imageAlt,
+  href
 }: CategoryPreviewProps) {
   return (
     <Link 
-      href="/catalogo" 
+      href={href} 
       className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
     >
       <div className="relative h-64 overflow-hidden">
