@@ -17,6 +17,13 @@ export default function Homepage() {
   const [filter, setFilter] = useState<string>('all');
   const pathname = usePathname();
   const [selectedProject, setSelectedProject] = useState<{ title: string; description?: string } | null>(null);
+  const withFinalPeriod = (text?: string) => {
+    if (!text) return text;
+    const trimmed = text.trim();
+    const last = trimmed.slice(-1);
+    if (['.', '!', '?', ')', '”', '»', '\'', '"'].includes(last)) return trimmed;
+    return `${trimmed}.`;
+  };
   // Categories data
   const categories = [
     {
@@ -139,7 +146,7 @@ export default function Homepage() {
         title={project.title}
         imageUrl={project.imageUrl}
         imageAlt={project.imageAlt}
-        description={project.description}
+        description={withFinalPeriod(project.description)}
         priceFrom={project.priceFrom}
         onClick={() => setSelectedProject({ title: project.title, description: project.description })}
       />
@@ -156,7 +163,7 @@ export default function Homepage() {
                       title={project.title}
                       imageUrl={project.imageUrl}
                       imageAlt={project.imageAlt}
-                      description={project.description}
+                      description={withFinalPeriod(project.description)}
                       priceFrom={project.priceFrom}
                       onClick={() => setSelectedProject({ title: project.title, description: project.description })}
                     />
