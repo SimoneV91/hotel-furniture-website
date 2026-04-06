@@ -54,8 +54,8 @@ export default function Homepage() {
 
   return (
     <main>
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-6">
+      <section className="pt-10 pb-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-">
           {/* Filter logic */}
           {(() => {
             const filteredProjects = projects.filter((project) => {
