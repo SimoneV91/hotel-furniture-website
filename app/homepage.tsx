@@ -61,7 +61,7 @@ export default function Homepage() {
             </p>
             
             {/* Filter Chips */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
               <button
                 onClick={() => setFilter('all')}
                 className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
@@ -112,7 +112,7 @@ export default function Homepage() {
               >
                 B&B
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* Filter logic */}

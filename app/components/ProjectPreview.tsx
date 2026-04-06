@@ -24,10 +24,10 @@ export default function ProjectPreview({
     <button
       type="button"
       onClick={onClick}
-      className="group flex h-[350px] w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
+      className="group flex h-[400px] w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
     >
-      {/* Fixed-size image area to keep all cards uniform */}
-      <div className="relative h-46 overflow-hidden">
+      {/* Image area: 50% of card height */}
+      <div className="relative h-1/2 flex-none overflow-hidden">
         <Image
           src={imageUrl}
           alt={imageAlt}
@@ -41,7 +41,7 @@ export default function ProjectPreview({
           {title}
         </h3>
         {description && (
-          <p className="text-sage-700 text-sm mt-1 line-clamp-2">            
+          <p className="text-sage-700 text-sm mt-1 line-clamp-4">            
             {description}
           </p>
         )}
