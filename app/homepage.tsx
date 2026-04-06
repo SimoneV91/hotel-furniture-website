@@ -54,74 +54,8 @@ export default function Homepage() {
 
   return (
     <main>
-      {/* Hero Section */}
-      {/* <Hero /> */}
-      {/* Projects Preview Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
-              Le Nostre Camere
-            </h2>
-            <p className="text-lg text-sage-700 max-w-2xl mx-auto mb-8">
-               Alcune delle nostre camere, presenti in moltissime strutture del territorio nazionale
-            </p>
-            
-            {/* Filter Chips */}
-            {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
-              <button
-                onClick={() => setFilter('all')}
-                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
-                  filter === 'all'
-                    ? 'bg-sage-900 text-white border-sage-900'
-                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
-                }`}
-              >
-                Tutte le camere
-              </button>
-              <button
-                onClick={() => setFilter('5')}
-                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
-                  filter === '5'
-                    ? 'bg-sage-900 text-white border-sage-900'
-                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
-                }`}
-              >
-                Camere 5 stelle
-              </button>
-              <button
-                onClick={() => setFilter('4')}
-                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
-                  filter === '4'
-                    ? 'bg-sage-900 text-white border-sage-900'
-                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
-                }`}
-              >
-                Camere 4 stelle
-              </button>
-              <button
-                onClick={() => setFilter('3')}
-                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
-                  filter === '3'
-                    ? 'bg-sage-900 text-white border-sage-900'
-                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
-                }`}
-              >
-                Camere 3 stelle
-              </button>
-              <button
-                onClick={() => setFilter('b&b')}
-                className={`px-4 py-2 rounded-full border transition-colors font-medium text-sm shadow-sm ${
-                  filter === 'b&b'
-                    ? 'bg-sage-900 text-white border-sage-900'
-                    : 'bg-white text-sage-900 border-sage-300 hover:bg-sage-100 hover:border-sage-400'
-                }`}
-              >
-                B&B
-              </button>
-            </div> */}
-          </div>
-
+        <div className="container mx-auto px-4 sm:px-6 lg:px-6">
           {/* Filter logic */}
           {(() => {
             const filteredProjects = projects.filter((project) => {
@@ -135,24 +69,23 @@ export default function Homepage() {
 
             return (
               <>
-            
-
+          
                 {/* Mobile: vertical scroll */}
-<div className="md:hidden max-h-[500px] overflow-y-auto px-4">
-  <div className="flex flex-col gap-4">
-    {filteredProjects.map((project, index) => (
-      <ProjectPreview
-        key={index}
-        title={project.title}
-        imageUrl={project.imageUrl}
-        imageAlt={project.imageAlt}
-        description={withFinalPeriod(project.description)}
-        priceFrom={project.priceFrom}
-        onClick={() => setSelectedProject({ title: project.title, description: project.description })}
-      />
-    ))}
-  </div>
-</div>
+              <div className="md:hidden max-h-[500px] overflow-y-auto px-4">
+                <div className="flex flex-col gap-4">
+                  {filteredProjects.map((project, index) => (
+                    <ProjectPreview
+                      key={index}
+                      title={project.title}
+                      imageUrl={project.imageUrl}
+                      imageAlt={project.imageAlt}
+                      description={withFinalPeriod(project.description)}
+                      priceFrom={project.priceFrom}
+                      onClick={() => setSelectedProject({ title: project.title, description: project.description })}
+                    />
+                  ))}
+                </div>
+              </div>
 
 
                 {/* Desktop: grid layout */}
