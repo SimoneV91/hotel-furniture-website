@@ -13,49 +13,49 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'HOTEL RIALTO SUISSE',
-    description: '(escluso sommier, trasporto e montaggio) Versione ignifuga certificazioni “Bando Turismo 2026” in classe B-s1, D0 Arredi sostenibili',
+    description: 'Prezzo € 3.211,00 (escluso sommier, trasporto e montaggio) Versione ignifuga certificazioni “Bando Turismo 2026” in classe B-s1, D0 Arredi sostenibili',
     priceFrom: 'da 3.211 € a camera',
     imageUrl: '/immagini/camereHomePage/1-hotel-rialto-suisse.PNG',
     imageAlt: 'Hotel Rialto Suisse'
   },
   {
     title: 'HOTEL BOSTON',
-    description: 'Legno olmo con testata a ponte e cabina armadio, completamente su misura spessore cm.3,6 compeleta di illuminazione',
+    description: 'Prezzo € 4.700 chiavi in mano. Legno olmo con testata a ponte e cabina armadio, completamente su misura spessore cm.3,6 compeleta di illuminazione',
     priceFrom: 'da 4.700 € a camera',
     imageUrl: '/immagini/camereHomePage/2-hotel-boston.PNG',
     imageAlt: 'Hotel Boston'
   },
   {
     title: 'HOTEL BOSTON',
-    description: 'Camera modello hotel Boston in noce con testata in legno a ponte, Sommier singolo in pelle',
+    description: 'Camera modello hotel Boston in noce con testata in legno a ponte Prezzo stuttura lignea € 3.211,00 Sommier singolo in pelle classe 1IM euro 300,00',
     priceFrom: 'da 3.211 € a camera',
     imageUrl: '/immagini/camereHomePage/3-hotel-boston.PNG',
     imageAlt: 'Hotel Boston'
   },
   {
     title: 'HOTEL BOSTON',
-    description: 'Camera modello hotel Boston in noce con testata in legno e cabina armadio, tutto su misura, in versione ignifuga spessore cm.3,6 o in nobilitato.',
+    description: 'Camera modello hotel Boston in noce con testata in legno e cabina armadio, tutto su misura, in versione ignifuga spessore cm.3,6 o in nobilitato',
     priceFrom: 'da 3.211 € a camera',
     imageUrl: '/immagini/camereHomePage/4-hotel-boston.png',
     imageAlt: 'Hotel Boston'
   },
   {
     title: 'GRUPPO SERVIZI BOSTON',
-    description: 'Gruppo servizi con cabina armadio spessore cm.3,6 h.225 in profondita cm.44 o 56 con vano porta guanciali tubo appendiabiti con illuminazione.',
+    description: 'Gruppo servizi con cabina armadio spessore cm.3,6 h.225 in profondita cm.44 o 56 con vano porta guanciali tubo appendiabiti con illuminazione',
     priceFrom: '',
     imageUrl: '/immagini/camereHomePage/5-gruppo-servizi-boston.PNG',
     imageAlt: 'Gruppo servizi Boston'
   },
   {
     title: 'TESTATA A CABINA',
-    description: 'Testata letto a cabina armadio hotel Boston in legno. Ideali per camere singole business molto piccole.',
+    description: 'Testata letto a cabina armadio hotel Boston in legno. Ideali per camere singole business molto piccole. Prezzo indicativo euro 1.250,00 su misura.',
     priceFrom: 'da 1.250 €',
     imageUrl: '/immagini/camereHomePage/6-testata-letto-a-cabina-armadio.png',
     imageAlt: 'Testata cabina'
   },
   {
     title: 'PARTICOLARE',
-    description: 'Testata elettrificata da spessore cm.5 con vano tecnico e cornice da cm.10. Dimensione massima in pezzo unico cm.310',
+    description: 'Testata elettrificata da spessore cm.5 con vano tecnico e cornice da cm.10. Dimensione massima in pezzo unico cm.310 (controllare se entra in camera)',
     priceFrom: '',
     imageUrl: '/immagini/camereHomePage/7-particolare.jpeg',
     imageAlt: 'Dettaglio testata'
@@ -76,14 +76,14 @@ export const projects: Project[] = [
   },
   {
     title: 'CAMERETTA GIRL',
-    description: 'Cameretta GIRL in melaminico con grande rapporto prezzo/qualità (solo per grandi quantità)',
+    description: 'Cameretta GIRL in melaminico con grande rapporto prezzo/qualità da euro 1.900 (solo per grandi quantità) da euro 2.500 (minimo 3 camere)',
     priceFrom: 'da 1.900 € a camera',
     imageUrl: '/immagini/camereHomePage/10.png',
     imageAlt: 'Cameretta Girl'
   },
   {
     title: 'CAMERETTA CANARINI',
-    description: 'Cameretta CANARINI in melaminico con grande rapporto prezzo/qualità',
+    description: 'Cameretta CANARINI in melaminico con grande rapporto prezzo/qualità da euro 1.900 (solo per grandi quantità) da euro 2.750 (minimo 3 camere)',
     priceFrom: 'da 1.900 € a camera',
     imageUrl: '/immagini/camereHomePage/11.png',
     imageAlt: 'Cameretta Canarini'
@@ -111,7 +111,7 @@ export const projects: Project[] = [
   },
   {
     title: 'HOTEL AIRONE',
-    description: 'Cameretta in melaminico con grande rapporto prezzo/qualità da euro',
+    description: 'Cameretta in melaminico con grande rapporto prezzo/qualità da euro 1.900 (solo per grandi quantità) da euro 2.500 (minimo 3 camere)',
     priceFrom: 'da 1.900 € a camera',
     imageUrl: '/immagini/camereHomePage/15-hotel-airone.png',
     imageAlt: 'Hotel Airone'
@@ -181,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     title: 'TESTATA CABINA BOSTON',
-    description: 'Testata letto a cabina armadio hotel Boston in legno. Ideali per camere singole business molto piccole.',
+    description: 'Testata letto a cabina armadio hotel Boston in legno. Ideali per camere singole business molto piccole. Prezzo indicativo euro 1.250,00 su misura.',
     priceFrom: 'da 1.250 €',
     imageUrl: '/immagini/camereHomePage/25.PNG',
     imageAlt: 'Testata cabina Boston'
@@ -349,7 +349,7 @@ export const projects: Project[] = [
   },
   {
     title: 'CAMERA ROMANTICA',
-    description: 'Cameretta hotel in melaminico con grande rapporto prezzo/qualità.',
+    description: 'Cameretta hotel in melaminico con grande rapporto prezzo/qualità da euro 1.900 (solo per grandi quantità) da euro 2.500 (minimo 3 camere).',
     priceFrom: 'da 1.900 € a camera',
     imageUrl: '/immagini/camereHomePage/49-sexy-hotel.PNG',
     imageAlt: 'Camera romantica'

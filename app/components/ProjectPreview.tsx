@@ -20,39 +20,46 @@ export default function ProjectPreview({
   priceFrom,
   onClick,
 }: ProjectPreviewProps) {
+  const safeImageUrl = imageUrl?.trim();
   return (
     <button
       type="button"
       onClick={onClick}
-      className="group flex h-[400px] w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
+      className="group flex w-full flex-col bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 text-left"
     >
-      {/* Image area: 50% of card height */}
-      <div className="relative h-1/2 flex-none overflow-hidden">
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+      {/* Fixed image ratio so cards don't collapse, while overall card height remains auto */}
+      <div className="relative aspect-[4/3] w-full overflow-hidden">
+        {safeImageUrl ? (
+          <Image
+            src={safeImageUrl}
+            alt={imageAlt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-sage-200 flex items-center justify-center">
+            <span className="text-sage-700 text-sm font-medium">Immagine non disponibile</span>
+          </div>
+        )}
       </div>
-      <div className="p-5 flex flex-1 flex-col gap-2">
+      <div className="p-5 flex flex-col gap-2">
         <h3 className="text-base font-semibold text-sage-900 group-hover:text-sage-700 transition-colors line-clamp-2">
           {title}
         </h3>
         {description && (
-          <p className="text-sage-700 text-sm mt-1 line-clamp-4">            
+          <p className="text-sage-700 text-sm mt-1">
             {description}
           </p>
         )}
-      <div className="mt-auto flex items-baseline gap-2 ">
+      {/* <div className="mt-auto flex items-baseline gap-2 ">
         <span className="text-xs uppercase text-sage-500">
           {priceFrom ? 'Prezzo indicativo' : 'Prezzo su richiesta'}
         </span>
         <span className="text-lg font-semibold text-sage-900">
           {priceFrom || '\u00A0'}
         </span>
-      </div>
+      </div> */}
 
       </div>
     </button>
