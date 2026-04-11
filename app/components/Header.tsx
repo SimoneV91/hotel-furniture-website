@@ -39,11 +39,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center" onClick={handleLinkClick}>
             <Image 
-              src="/immagini/logo/logo_MobiliPerAlbergo.png" 
+              src="/immagini/logo/logo_mobili_per_albergo_piccolo.jpg" 
               alt="Mobili per Albergo" 
               width={200}
               height={60}
-              className="h-auto w-auto max-h-48"
+              className="h-auto w-auto max-h-20"
               priority
             />
           </Link>

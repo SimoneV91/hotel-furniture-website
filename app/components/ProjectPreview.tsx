@@ -44,9 +44,9 @@ export default function ProjectPreview({
         )}
       </div>
       <div className="p-5 flex flex-col gap-2">
-        <h3 className="text-base font-semibold text-sage-900 group-hover:text-sage-700 transition-colors line-clamp-2">
+        {/* <h3 className="text-base font-semibold text-sage-900 group-hover:text-sage-700 transition-colors line-clamp-2">
           {title}
-        </h3>
+        </h3> */}
         {description && (
           <p className="text-sage-700 text-sm mt-1">
             {description}

@@ -1,7 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import ContactRequestForm, { ContactContext } from './ContactRequestForm';
+
+/** Stesso breakpoint di Tailwind `md:` (768px): sotto = trattato come mobile. */
+const MOBILE_MAX_WIDTH_QUERY = '(max-width: 767px)';
+
+const CONTACT_MODAL_HISTORY_KEY = 'contactRequestModal' as const;
+
+function isMobileViewport() {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia(MOBILE_MAX_WIDTH_QUERY).matches;
+}
 
 export default function ContactRequestModal({
   isOpen,
@@ -12,10 +22,41 @@ export default function ContactRequestModal({
   onClose: () => void;
   context?: ContactContext;
 }) {
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  const historyEntryPendingRef = useRef(false);
+  const closedViaPopStateRef = useRef(false);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    if (!isMobileViewport()) return;
+
+    historyEntryPendingRef.current = true;
+    closedViaPopStateRef.current = false;
+    window.history.pushState({ [CONTACT_MODAL_HISTORY_KEY]: true }, '');
+
+    const handlePopState = () => {
+      historyEntryPendingRef.current = false;
+      closedViaPopStateRef.current = true;
+      onCloseRef.current();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      if (historyEntryPendingRef.current && !closedViaPopStateRef.current) {
+        historyEntryPendingRef.current = false;
+        window.history.back();
+      }
+      closedViaPopStateRef.current = false;
     };
   }, [isOpen]);
 

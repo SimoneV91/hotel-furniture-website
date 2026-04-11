@@ -8,6 +8,8 @@ import CategoryPreview from './components/CategoryPreview';
 import ProjectPreview from './components/ProjectPreview';
 import ContactRequestModal from './components/ContactRequestModal';
 import { projects } from './data/projects';
+import Image from 'next/image';
+
 
 /**
  * Homepage component - Main landing page content
@@ -144,7 +146,7 @@ export default function Homepage() {
       </section>
 
       {/* Categories Preview Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
@@ -173,7 +175,22 @@ export default function Homepage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+<section className="py-5 bg-white">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+    <Image 
+      src="/immagini/logo/logo_mobili_per_albergo_grande.jpg" 
+      alt="Mobili per Albergo" 
+      width={800}
+      height={120}
+      className="h-auto w-auto max-h-80"
+      priority
+    />
+  </div>
+</section>
+
 
 
 
