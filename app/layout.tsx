@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 import RecaptchaProvider from "./components/RecaptchaProvider";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import AnalyticsScripts from "./components/analytics/AnalyticsScripts";
