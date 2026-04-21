@@ -83,3 +83,11 @@ export default function ReferenzePage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Referenze Hotel Arredati in Italia | Mobili per Albergo';
+  const description =
+    'Scopri le referenze di hotel e strutture ricettive arredate in tutta Italia con soluzioni contract firmate Mobili per Albergo.';
+  const canonical = 'https://www.mobiliperalbergo.it/referenze';
+  return { title, description, alternates: { canonical } };
+}

@@ -73,3 +73,11 @@ export default function CookiePolicyPage() {
   );
 }
 
+export async function generateMetadata() {
+  const title = 'Cookie Policy | Mobili per Albergo';
+  const description =
+    'Informazioni sui cookie utilizzati da Mobili per Albergo e sulle modalita di gestione delle preferenze di consenso.';
+  const canonical = 'https://www.mobiliperalbergo.it/cookie-policy';
+  return { title, description, alternates: { canonical } };
+}
+

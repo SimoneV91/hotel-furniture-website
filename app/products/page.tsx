@@ -31,3 +31,11 @@ export default function ProductsPage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Prodotti per Hotel | Mobili per Albergo';
+  const description =
+    'Panoramica dei prodotti e delle soluzioni di arredamento contract per hotel e strutture ricettive.';
+  const canonical = 'https://www.mobiliperalbergo.it/products';
+  return { title, description, alternates: { canonical } };
+}

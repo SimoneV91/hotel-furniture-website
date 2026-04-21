@@ -175,3 +175,11 @@ export default function TerminiECondizioniPage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Termini e Condizioni | Mobili per Albergo';
+  const description =
+    'Condizioni generali di utilizzo del sito e dei servizi offerti da Mobili per Albergo, incluse richieste di preventivo e responsabilita.';
+  const canonical = 'https://www.mobiliperalbergo.it/termini-e-condizioni';
+  return { title, description, alternates: { canonical } };
+}

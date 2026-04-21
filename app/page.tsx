@@ -15,3 +15,11 @@ export default function Page() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Mobili per Albergo | Arredamento Contract per Hotel';
+  const description =
+    'Arredamento contract su misura per hotel, alberghi e strutture ricettive: camere, reception e spazi comuni con soluzioni professionali.';
+  const canonical = 'https://www.mobiliperalbergo.it/';
+  return { title, description, alternates: { canonical } };
+}

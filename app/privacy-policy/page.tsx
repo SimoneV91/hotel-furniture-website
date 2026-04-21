@@ -180,3 +180,11 @@ export default function PrivacyPolicyPage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Privacy Policy | Mobili per Albergo';
+  const description =
+    'Informativa privacy di Mobili per Albergo: trattamento dei dati personali, diritti dell’interessato e contatti del titolare.';
+  const canonical = 'https://www.mobiliperalbergo.it/privacy-policy';
+  return { title, description, alternates: { canonical } };
+}

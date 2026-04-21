@@ -167,3 +167,11 @@ export default function IstruzioniPage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Istruzioni e Sicurezza Arredi | Mobili per Albergo';
+  const description =
+    'Linee guida su sicurezza e materiali ignifughi per arredi contract in hotel, B&B e case vacanza.';
+  const canonical = 'https://www.mobiliperalbergo.it/istruzioni';
+  return { title, description, alternates: { canonical } };
+}

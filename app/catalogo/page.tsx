@@ -90,3 +90,11 @@ export default function CatalogoPage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Catalogo Arredi Hotel | Camere 3, 4, 5 Stelle e B&B';
+  const description =
+    'Esplora il catalogo di mobili per albergo: soluzioni contract per camere hotel 3, 4, 5 stelle e B&B con arredi su misura.';
+  const canonical = 'https://www.mobiliperalbergo.it/catalogo';
+  return { title, description, alternates: { canonical } };
+}

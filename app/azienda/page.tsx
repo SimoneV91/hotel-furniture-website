@@ -249,3 +249,11 @@ export default function AziendaPage() {
     </>
   );
 }
+
+export async function generateMetadata() {
+  const title = 'Azienda | 40 Anni di Esperienza nell’Arredo Hotel';
+  const description =
+    'Conosci Mobili per Albergo: oltre 40 anni di esperienza, produzione italiana e soluzioni contract su misura per l’hospitality.';
+  const canonical = 'https://www.mobiliperalbergo.it/azienda';
+  return { title, description, alternates: { canonical } };
+}
