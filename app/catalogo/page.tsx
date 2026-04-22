@@ -37,7 +37,7 @@ export default function CatalogoPage() {
     <>
       <Header />
       <main className="min-h-screen bg-sage-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-sage-900 mb-6">
               Catalogo
@@ -52,7 +52,7 @@ export default function CatalogoPage() {
               Torna alla Home
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {/* Sezione Categorie (copiata dalla homepage) */}
         <section className="py-20 bg-white">

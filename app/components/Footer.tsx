@@ -65,8 +65,9 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Contatti</h4>
             <ul className="space-y-2 text-sage-400">
               <li>Email: <a href="mailto:mobiliperalbergo@gmail.com" className="hover:text-white transition-colors">mobiliperalbergo@gmail.com</a></li>
+              <li>Telefono: <a  href="tel:+393497911790"  className="hover:text-white transition-colors" >+39 349 791 1790</a></li>
               <li>P.IVA 04082250269</li>
-              <li>Via Suoi, 24 - 31053 Pieve di Soligo TV</li>
+              <li>Via Suoi 31053 Pieve di Soligo TV</li>
             </ul>
           </div>
         </div>
@@ -74,7 +75,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-sage-800 mt-12 pt-8 text-center text-sage-500 text-sm">
           <p>
-            P.IVA 04082250269 - Produzione a Pieve di Soligo (TV) - 31053 - Via Suoi, 24 -{' '}
+            P.IVA 04082250269 - Produzione a Pieve di Soligo (TV) - 31053 - Via Suoi-{' '}
             <a href="mailto:mobiliperalbergo@gmail.com" className="underline hover:text-sage-300 transition-colors">
               mobiliperalbergo@gmail.com
             </a>{' '}

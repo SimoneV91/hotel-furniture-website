@@ -232,7 +232,7 @@ export default function ContactPage() {
                 Informazioni di Contatto
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-sage-200 rounded-lg flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,11 +242,25 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-sage-900 mb-2">Indirizzo</h3>
                   <p className="text-sage-700">
-                    Via Suoi, 24 - 31053 Pieve di Soligo TV
+                    Via Suoi - 31053 Pieve di Soligo TV
                   </p>
                 </div>
 
-                
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-sage-200 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-sage-900 mb-2">Telefono</h3>
+                  <a
+                    href="tel:+393497911790"
+                    className="text-sage-700 hover:text-sage-900 transition-colors"
+                  >
+                    +39 349 791 1790
+                  </a>
+                </div>
 
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-sage-200 rounded-lg flex items-center justify-center mb-4">
