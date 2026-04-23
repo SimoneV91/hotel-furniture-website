@@ -31,25 +31,25 @@ export default function Homepage() {
     {
       title: 'Camere 5 Stelle',
       description: 'Letti, armadi e complementi d\'arredo per ambienti di riposo eleganti',
-      imageUrl: '/immagini/Catalogo/5stelle.jpg',
+      imageUrl: '/immagini/Catalogo/5stelle.webp',
       imageAlt: 'Camera d\'hotel moderna'
     },
     {
       title: 'Camere 4 Stelle',
       description: 'Reception, lounge e spazi comuni con design contemporaneo',
-      imageUrl: '/immagini/Catalogo/4stelle.jpg',
+      imageUrl: '/immagini/Catalogo/4stelle.webp',
       imageAlt: 'Reception hotel elegante'
     },
     {
       title: 'Camere 3 Stelle',
       description: 'Tavoli, sedute e arredi per ristoranti e bar di hotel',
-      imageUrl: '/immagini/Catalogo/3stelle.jpg',
+      imageUrl: '/immagini/Catalogo/3stelle.webp',
       imageAlt: 'Ristorante hotel'
     },
     {
       title: 'Camere B&B',
       description: 'Arredi per centri benessere e spa con atmosfera rilassante',
-      imageUrl: '/immagini/Catalogo/b&B.jpg',
+      imageUrl: '/immagini/Catalogo/b&B.webp',
       imageAlt: 'Spa hotel'
     },
   ];
@@ -181,7 +181,7 @@ export default function Homepage() {
 <section className="py-5 bg-white">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
     <Image 
-      src="/immagini/logo/logo_mobili_per_albergo_grande.jpg" 
+      src="/immagini/logo/logo_mobili_per_albergo_grande.webp" 
       alt="Mobili per Albergo" 
       width={800}
       height={120}

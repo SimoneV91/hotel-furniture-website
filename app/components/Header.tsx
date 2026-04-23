@@ -39,7 +39,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center" onClick={handleLinkClick}>
             <Image 
-              src="/immagini/logo/logo_mobili_per_albergo_piccolo.jpg" 
+              src="/immagini/logo/logo_piccolo.webp" 
               alt="Mobili per Albergo" 
               width={200}
               height={60}

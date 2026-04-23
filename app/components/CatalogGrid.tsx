@@ -23,8 +23,9 @@ export default function CatalogGrid({ items }: { items: CatalogItem[] }) {
               src={item.imageUrl}
               alt={item.imageAlt}
               fill
+              unoptimized
               className="object-cover group-hover:scale-105 transition-transform duration-300"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              sizes="(max-width: 767px) 47vw, (max-width: 1279px) 31vw, 23vw"
             />
             {/* Overlay "Vedi prezzo (PDF)" */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-200 flex items-center justify-center">
