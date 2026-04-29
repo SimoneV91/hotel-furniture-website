@@ -81,6 +81,7 @@ export default function Homepage() {
                       title={project.title}
                       imageUrl={project.imageUrl}
                       imageAlt={project.imageAlt}
+                      imagePositionClassName={project.imageUrl.includes('/7-particolare.webp') ? 'object-[center_95%]' : undefined}
                       description={withFinalPeriod(project.description)}
                       priceFrom={project.priceFrom}
                       onClick={() => setSelectedProject({ title: project.title, description: project.description })}
@@ -98,6 +99,7 @@ export default function Homepage() {
                       title={project.title}
                       imageUrl={project.imageUrl}
                       imageAlt={project.imageAlt}
+                      imagePositionClassName={project.imageUrl.includes('/7-particolare.webp') ? 'object-[center_95%]' : undefined}
                       description={withFinalPeriod(project.description)}
                       priceFrom={project.priceFrom}
                       onClick={() => setSelectedProject({ title: project.title, description: project.description })}

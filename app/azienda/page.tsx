@@ -10,46 +10,13 @@ export default function AziendaPage() {
     <>
       <Header />
       <main className="min-h-screen bg-sage-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-sage-50 to-sage-100 py-16 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold text-sage-900 mb-4">
-                La Nostra Azienda
-              </h1>
-              <p className="text-lg text-sage-700">
-                Esperti nell'arredamento contract per l'hospitality, con passione per il design e attenzione ai dettagli.
-              </p>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Storia Section */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-4">
-                  La Nostra Storia
-                </h2>
-              </div>
-              <div className="prose prose-lg max-w-none">
-                <p className="text-lg text-sage-700 mb-6 leading-relaxed">
-                  Con oltre <strong className="text-sage-900">40 anni di esperienza</strong> nel settore dell'arredamento contract, 
-                  ci siamo specializzati nella progettazione e realizzazione di soluzioni su misura per hotel, 
-                  alberghi e strutture ricettive di ogni categoria.
-                </p>
-                <p className="text-lg text-sage-700 mb-6 leading-relaxed">
-                  La nostra azienda nasce dalla passione per il design e dalla convinzione che ogni spazio 
-                  ricettivo debba essere unico, accogliente e funzionale. Partendo da una piccola realtà artigianale, 
-                  abbiamo cresciuto la nostra competenza lavorando con strutture di prestigio in tutta Italia, 
-                  sviluppando un know-how che ci permette di affrontare progetti di qualsiasi dimensione e complessità.
-                </p>
-                <p className="text-lg text-sage-700 leading-relaxed">
-                  Oggi siamo un punto di riferimento nel settore dell'hospitality, riconosciuti per la qualità 
-                  dei materiali, l'attenzione ai dettagli e la capacità di interpretare le esigenze di ogni cliente, 
-                  trasformandole in ambienti che raccontano una storia e creano esperienze memorabili per gli ospiti.
-                </p>
 
                 {/* Founder Story Highlight */}
                 <div className="mt-10 bg-sage-50 border border-sage-200 rounded-lg p-6 sm:p-8 not-prose">

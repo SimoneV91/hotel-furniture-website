@@ -10,6 +10,7 @@ interface ProjectPreviewProps {
   description?: string;
   priceFrom?: string;
   onClick?: () => void;
+  imagePositionClassName?: string;
 }
 
 export default function ProjectPreview({ 
@@ -19,6 +20,7 @@ export default function ProjectPreview({
   description,
   priceFrom,
   onClick,
+  imagePositionClassName,
 }: ProjectPreviewProps) {
   const safeImageUrl = imageUrl?.trim();
   return (
@@ -34,7 +36,7 @@ export default function ProjectPreview({
             src={safeImageUrl}
             alt={imageAlt}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className={`object-cover ${imagePositionClassName ?? ''} group-hover:scale-105 transition-transform duration-300`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
