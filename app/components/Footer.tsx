@@ -48,6 +48,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/Documents/Listino prezzi 2026.pdf"
+                         target="_blank"
+                        className="hover:text-white transition-colors">
+                  Listino prezzi 2026
+                </Link>
+              </li>
+              
+              <li>
                 <Link href="/istruzioni" className="hover:text-white transition-colors">
                   Istruzioni
                 </Link>
