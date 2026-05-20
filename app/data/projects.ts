@@ -25,6 +25,13 @@ export const projects: Project[] = [
     imageUrl: '/immagini/camereHomePage/2-hotel-boston.webp',
     imageAlt: 'Hotel Boston'
   },
+    {
+    title: 'MALAMINICO',
+    description: 'CAMERA COMPLETA A SOLI € 1.999 PROMO ALBERGATORI: Rinnova la tua struttura a un prezzo mai visto! ',
+    priceFrom: 'da 4.700 € a camera',
+    imageUrl: '/immagini/camereHomePage/Malaminico.webp',
+    imageAlt: 'Hotel Boston'
+  },
   {
     title: 'HOTEL BOSTON',
     description: 'Camera modello hotel Boston in noce con testata in legno a ponte Prezzo stuttura lignea € 3.211,00 Sommier singolo in pelle classe 1IM euro 300,00',
