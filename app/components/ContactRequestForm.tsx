@@ -23,7 +23,7 @@ export default function ContactRequestForm({
     nome: '',
     citta: '',
     email: '',
-    motivo: 'richiesta_progetto',
+    telefono: '',
     messaggio: '',
     consenso: false,
     website: '', // Honeypot
@@ -56,6 +56,8 @@ export default function ContactRequestForm({
     if (!formData.email.trim()) newErrors.email = "L'email è obbligatoria";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
       newErrors.email = "Inserisci un'email valida";
+
+    if (!formData.telefono.trim()) newErrors.telefono = 'Inserisci il telefono';
 
     if (!formData.consenso)
       newErrors.consenso = 'È necessario accettare i termini e condizioni e la privacy policy';
@@ -91,7 +93,7 @@ export default function ContactRequestForm({
           email: formData.email,
           message: formData.messaggio,
           citta: formData.citta,
-          motivo: formData.motivo,
+          telefono: formData.telefono,
           website: formData.website,
           recaptchaToken,
           context,
@@ -110,7 +112,7 @@ export default function ContactRequestForm({
         nome: '',
         citta: '',
         email: '',
-        motivo: 'richiesta_progetto',
+        telefono: '',
         messaggio: '',
         consenso: false,
         website: '',
@@ -191,7 +193,22 @@ export default function ContactRequestForm({
         {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
       </div>
 
-      
+      <div>
+        <label className="block text-sm font-medium text-sage-900 mb-2">
+          Telefono <span className="text-sage-600">*</span>
+        </label>
+        <input
+          type="tel"
+          name="telefono"
+          value={formData.telefono}
+          onChange={handleChange}
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent ${
+            errors.telefono ? 'border-red-500' : 'border-sage-300'
+          }`}
+          placeholder="n. Telefono"
+        />
+        {errors.telefono && <p className="mt-1 text-sm text-red-600">{errors.telefono}</p>}
+      </div>
 
       <div>
         <label className="block text-sm font-medium text-sage-900 mb-2">Messaggio</label>

@@ -17,7 +17,7 @@ export default function ContactPage() {
     citta: '',
     telefono: '',
     email: '',
-    motivo: '',
+    //motivo: '',
     messaggio: '',
     consenso: false,
     website: '' // Honeypot field
@@ -57,8 +57,8 @@ export default function ContactPage() {
       newErrors.email = 'Inserisci un\'email valida';
     }
 
-    if (!formData.motivo) {
-      newErrors.motivo = 'Seleziona un motivo di contatto';
+    if (!formData.telefono) {
+      newErrors.telefono = 'Inserisci il contatto';
     }
 
     if (!formData.consenso) {
@@ -127,7 +127,7 @@ export default function ContactPage() {
           message: formData.messaggio,
           citta: formData.citta,
           telefono: formData.telefono,
-          motivo: formData.motivo,
+          //motivo: formData.motivo,
           website: formData.website, // Honeypot
           recaptchaToken: recaptchaToken,
         }),
@@ -188,7 +188,7 @@ export default function ContactPage() {
         citta: '',
         telefono: '',
         email: '',
-        motivo: '',
+        //motivo: '',
         messaggio: '',
         consenso: false,
         website: ''
@@ -364,7 +364,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Motivo */}
-                  <div>
+                  {/* <div>
                     <label htmlFor="motivo" className="block text-sm font-medium text-sage-900 mb-2">
                       Motivo del Contatto <span className="text-sage-600">*</span>
                     </label>
@@ -387,6 +387,27 @@ export default function ContactPage() {
                     </select>
                     {errors.motivo && (
                       <p className="mt-1 text-sm text-red-600">{errors.motivo}</p>
+                    )}
+                  </div> */}
+
+                  {/* Telefono */}
+                                    <div>
+                    <label htmlFor="telefono" className="block text-sm font-medium text-sage-900 mb-2">
+                      Telefono <span className="text-sage-600">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent ${
+                        errors.telefono ? 'border-red-500' : 'border-sage-300'
+                      }`}
+                      placeholder="n. Telefono"
+                    />
+                    {errors.telefono && (
+                      <p className="mt-1 text-sm text-red-600">{errors.telefono}</p>
                     )}
                   </div>
 

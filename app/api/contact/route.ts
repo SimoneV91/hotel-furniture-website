@@ -31,10 +31,9 @@ function checkRateLimit(ip: string): boolean {
 const contactSchema = z.object({
   name: z.string().min(1, 'Il nome è obbligatorio').max(200, 'Il nome è troppo lungo'),
   email: z.string().email('Email non valida').max(200, 'Email troppo lunga'),
-  message: z.string().min(1, 'Il messaggio è obbligatorio').max(5000, 'Il messaggio è troppo lungo'),
+  message: z.string().max(5000, 'Il messaggio è troppo lungo').optional().default(''),
   citta: z.string().optional(),
-  telefono: z.string().optional(),
-  motivo: z.string().optional(),
+  telefono: z.string().min(1, 'Il telefono è obbligatorio').max(50, 'Il telefono è troppo lungo'),
   website: z.string().optional(), // Honeypot field
   recaptchaToken: z.string().min(1, 'Token reCAPTCHA mancante'),
   context: z
@@ -86,21 +85,18 @@ export async function POST(request: NextRequest) {
     const validationResult = contactSchema.safeParse(body);
 
     if (!validationResult.success) {
+      const firstIssue = validationResult.error.issues[0];
+      const fieldLabel = firstIssue?.path?.join('.') || 'campo';
       return NextResponse.json(
-        { error: 'Dati non validi', details: validationResult.error.issues },
+        {
+          error: `Dati non validi: ${fieldLabel} — ${firstIssue?.message ?? 'valore non accettato'}`,
+          details: validationResult.error.issues,
+        },
         { status: 400 }
       );
     }
 
-    const { name, email, message, citta, telefono, motivo, recaptchaToken, context } = validationResult.data;
-
-    // Verifica che message esista (dovrebbe essere sempre presente dopo validazione)
-    if (!message || message.trim() === '') {
-      return NextResponse.json(
-        { error: 'Il messaggio è obbligatorio' },
-        { status: 400 }
-      );
-    }
+    const { name, email, message, citta, telefono, recaptchaToken, context } = validationResult.data;
 
     // Verifica reCAPTCHA token
     const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
@@ -281,22 +277,16 @@ export async function POST(request: NextRequest) {
                 <div class="value">${citta}</div>
               </div>
               ` : ''}
-              ${telefono ? `
               <div class="field">
                 <div class="label">Telefono:</div>
                 <div class="value">${telefono}</div>
               </div>
-              ` : ''}
-              ${motivo ? `
-              <div class="field">
-                <div class="label">Motivo del Contatto:</div>
-                <div class="value">${motivo}</div>
-              </div>
-              ` : ''}
+              ${message.trim() ? `
               <div class="field">
                 <div class="label">Messaggio:</div>
                 <div class="value">${message.replace(/\n/g, '<br>')}</div>
               </div>
+              ` : ''}
             </div>
           </div>
         </body>
