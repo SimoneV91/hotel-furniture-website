@@ -48,10 +48,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/Documents/Listino prezzi 2026.pdf"
+                <Link href="/Documents/Listino prezzi 2027.pdf"
                          target="_blank"
                         className="hover:text-white transition-colors">
-                  Listino prezzi 2026
+                  Listino prezzi 2027
                 </Link>
               </li>
               

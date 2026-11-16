@@ -129,12 +129,12 @@ export default function Header() {
               REFERENZE
             </Link>
             <a 
-              href="/Documents/Listino prezzi 2026.pdf"
+              href="/Documents/Listino prezzi 2027.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sage-700 hover:text-sage-900 transition-colors font-medium"
             >
-              LISTINO PREZZI 2026
+              LISTINO PREZZI 2027
             </a>
             <Link 
               href="/istruzioni" 
@@ -214,13 +214,13 @@ export default function Header() {
               REFERENZE
             </Link>
             <a 
-              href="/Documents/Listino prezzi 2026.pdf"
+              href="/Documents/Listino prezzi 2027.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sage-700 hover:text-sage-900 hover:bg-sage-50 transition-colors font-medium py-2 px-4 rounded-md"
               onClick={handleLinkClick}
             >
-              LISTINO PREZZI 2026
+              LISTINO PREZZI 2027
             </a>
             <Link 
               href="/istruzioni" 
