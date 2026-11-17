@@ -199,13 +199,13 @@ export default function Header() {
             >
               CATALOGO
             </Link>
-            <Link 
+            {/* <Link 
               href="/projects" 
               className="block text-sage-700 hover:text-sage-900 hover:bg-sage-50 transition-colors font-medium py-2 px-4 rounded-md"
               onClick={handleLinkClick}
             >
               PROGETTI
-            </Link>
+            </Link> */}
             <Link 
               href="/referenze" 
               className="block text-sage-700 hover:text-sage-900 hover:bg-sage-50 transition-colors font-medium py-2 px-4 rounded-md"

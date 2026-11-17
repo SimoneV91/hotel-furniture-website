@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import Hero from './components/Hero';
 import CategoryPreview from './components/CategoryPreview';
 import ProjectPreview from './components/ProjectPreview';
-import ContactRequestModal from './components/ContactRequestModal';
+import ImageModal from './components/ImageModal';
 import { projects } from './data/projects';
 import Image from 'next/image';
 
@@ -17,8 +16,7 @@ import Image from 'next/image';
  */
 export default function Homepage() {
   const [filter, setFilter] = useState<string>('all');
-  const pathname = usePathname();
-  const [selectedProject, setSelectedProject] = useState<{ title: string; description?: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ url: string; alt: string } | null>(null);
   const withFinalPeriod = (text?: string) => {
     if (!text) return text;
     const trimmed = text.trim();
@@ -84,7 +82,7 @@ export default function Homepage() {
                       imagePositionClassName={project.imageUrl.includes('/7-particolare.webp') ? 'object-[center_95%]' : undefined}
                       description={withFinalPeriod(project.description)}
                       priceFrom={project.priceFrom}
-                      onClick={() => setSelectedProject({ title: project.title, description: project.description })}
+                      onClick={() => setSelectedImage({ url: project.imageUrl, alt: project.imageAlt })}
                     />
                   ))}
                 </div>
@@ -102,7 +100,7 @@ export default function Homepage() {
                       imagePositionClassName={project.imageUrl.includes('/7-particolare.webp') ? 'object-[center_95%]' : undefined}
                       description={withFinalPeriod(project.description)}
                       priceFrom={project.priceFrom}
-                      onClick={() => setSelectedProject({ title: project.title, description: project.description })}
+                      onClick={() => setSelectedImage({ url: project.imageUrl, alt: project.imageAlt })}
                     />
                   ))}
                 </div>
@@ -112,15 +110,14 @@ export default function Homepage() {
 
         </div>
       </section>
-      <ContactRequestModal
-        isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
-        context={{
-          sourcePage: pathname,
-          cardTitle: selectedProject?.title,
-          cardDescription: selectedProject?.description,
-        }}
-      />
+      {selectedImage && (
+        <ImageModal
+          imageUrl={selectedImage.url}
+          imageAlt={selectedImage.alt}
+          isOpen={!!selectedImage}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
       {/* Company Preview Section */}
       <section className="py-20 bg-sage-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
