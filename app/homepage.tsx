@@ -125,21 +125,12 @@ export default function Homepage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-sage-900 mb-6">
               Soluzioni Contract per l'Hospitality
             </h2>
-            <p className="text-lg text-sage-700 mb-8 leading-relaxed">
+            <p className="text-lg text-sage-700 leading-relaxed">
               Siamo specializzati nella progettazione e realizzazione di arredi contract 
               per hotel, alberghi e strutture ricettive. Con oltre 40 anni di esperienza 
               nel settore, offriamo soluzioni su misura che combinano design contemporaneo, 
               qualità dei materiali e funzionalità per creare ambienti di accoglienza unici.
             </p>
-            <Link
-              href="/about"
-              className="text-sage-900 font-semibold hover:text-sage-700 transition-colors inline-flex items-center gap-2"
-            >
-              Scopri di più su di noi
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
           </div>
         </div>
       </section>
